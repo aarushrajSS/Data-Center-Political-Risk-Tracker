@@ -1,0 +1,8 @@
+{
+  "name": "data-center-political-risk-tracker",
+  "version": "1.0.0",
+  "description": "Interactive map of U.S. data center credits, power status, state politics, rent schedules and bond-level political exposure.",
+  "private": true,
+  "scripts": { "build": "node build/build.js" },
+  "devDependencies": { "d3-geo": "3.1.1", "topojson-client": "3.1.0", "us-atlas": "3.0.1" }
+}

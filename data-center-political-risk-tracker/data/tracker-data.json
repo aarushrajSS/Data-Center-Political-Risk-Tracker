@@ -1,0 +1,2874 @@
+{
+ "asOf": "2026-10-13",
+ "states": {
+  "TX": {
+   "name": "Texas",
+   "risk": 4.5,
+   "stance": "Turning hostile",
+   "policy": [
+    "Aug 3: Gov. Abbott ordered a PUC/ERCOT audit of every data center in the interconnection queue; ERCOT paused Batch Zero. Projects that fail the audit 'must be denied' connection.",
+    "Sep 21: Abbott ordered TCEQ to pause all data-center-related environmental permits, including behind-the-meter gas generation. TCEQ compliance report due Oct 19; pause runs until ERCOT review ends (~mid-Dec).",
+    "ERCOT large-load queue ~474 GW, ~90% data centers. BofA: ~50 GW of the ~253 GW U.S. pipeline could be affected.",
+    "Only 20 of 138 sales-tax-exempt facilities have finished compliance audits ($3.3B in exemptions). Bill pre-filing opens Nov 9; 60+ data center bills expected."
+   ],
+   "race": {
+    "office": "Governor",
+    "cands": [
+     [
+      "Greg Abbott",
+      "R"
+     ],
+     [
+      "Gina Hinojosa",
+      "D"
+     ]
+    ],
+    "polls": [
+     [
+      "ReconMR/Siena",
+      "Oct 13",
+      48,
+      47
+     ],
+     [
+      "UMass Lowell",
+      "Oct 8",
+      48,
+      44
+     ],
+     [
+      "YouGov",
+      "Oct 6",
+      47,
+      48
+     ],
+     [
+      "NYT/Siena",
+      "Oct 3",
+      46,
+      49
+     ],
+     [
+      "Fox News",
+      "Oct 2",
+      52,
+      47
+     ]
+    ],
+    "rating": "Likely R (Cook) but polling within 2 pts",
+    "positions": [
+     "Abbott (R): backed the 2015 sales-tax exemptions; pivoted in Aug to case-by-case audits and grid oversight.",
+     "Hinojosa (D): wants a special session to repeal the exemptions and a pause on new projects until guardrails exist."
+    ]
+   },
+   "extra": "Senate: Talarico (D) 45 / Paxton (R) 45 (UMass Lowell, Sep 18-28). Voters: 65% oppose an AI data center in their community; 56% back a statewide ban on new builds (UMass Lowell).",
+   "implication": "Either outcome keeps the audit gate on un-energized ERCOT loads into 1H27. A Hinojosa win adds tax-exemption repeal risk, which hits project economics for every Texas lease underwritten on exempt equipment purchases. Behind-the-meter gas projects lost their workaround on Sep 21."
+  },
+  "NY": {
+   "name": "New York",
+   "risk": 4.5,
+   "stance": "Hostile",
+   "policy": [
+    "Jul 14: EO 62, the first statewide moratorium. One-year pause on new state environmental permits for facilities over 50 MW. Existing operations and fully permitted expansions continue.",
+    "Hochul also wants to ban tax breaks for data centers. Local pauses: Town of Tonawanda, Mohawk, East Greenbush, Clay."
+   ],
+   "race": {
+    "office": "Governor",
+    "cands": [
+     [
+      "Kathy Hochul",
+      "D"
+     ],
+     [
+      "Bruce Blakeman",
+      "R"
+     ]
+    ],
+    "polls": [
+     [
+      "Emerson",
+      "Oct 8",
+      52,
+      40
+     ],
+     [
+      "Marist",
+      "Oct 7",
+      53,
+      42
+     ]
+    ],
+    "rating": "Solid D",
+    "positions": [
+     "Hochul (D): signed the moratorium; running on it.",
+     "Blakeman (R): trails by ~11."
+    ]
+   },
+   "implication": "Hochul's re-election locks in the moratorium through mid-2027. Permitted Lake Mariner buildings continue; any new campus or unpermitted expansion (Lake Hawkeye/Cayuga) is frozen."
+  },
+  "MI": {
+   "name": "Michigan",
+   "risk": 4,
+   "stance": "Hostile, bipartisan",
+   "policy": [
+    "Moratorium bills HB 5594-5596 in committee; Gov. Whitmer opposes them.",
+    "63 local actions, including Flint (12 mo), Lansing (182 days), Ypsilanti Twp (180 days). Augusta Twp voters overturned a rezoning.",
+    "Saline Twp first tried to block the Stargate campus, then settled after lawsuits. The MPSC-approved DTE contract carries consumer protections; both parties want them written into state law."
+   ],
+   "race": {
+    "office": "Governor (open)",
+    "cands": [
+     [
+      "Jocelyn Benson",
+      "D"
+     ],
+     [
+      "John James",
+      "R"
+     ]
+    ],
+    "polls": [
+     [
+      "YouGov",
+      "Oct 6",
+      48,
+      45
+     ],
+     [
+      "Mitchell",
+      "Oct 6",
+      46,
+      39
+     ],
+     [
+      "Fox News",
+      "Sep 30",
+      54,
+      45
+     ],
+     [
+      "Marist",
+      "Sep 30",
+      53,
+      41
+     ]
+    ],
+    "rating": "Lean D",
+    "positions": [
+     "Both nominees call for a moratorium on new projects while rules are written.",
+     "Benson (D): statewide pause; her husband works for Related Cos., Saline's developer (says he has stepped away from Michigan projects).",
+     "James (R): local control, industrial land over farmland, blames state tax breaks."
+    ]
+   },
+   "extra": "Senate (open): El-Sayed (D) plan says no rate hikes, data centers pay for their own energy.",
+   "implication": "Whoever wins, the next governor backs a pause on new builds. Saline is under construction with an approved DTE contract, so it is most likely grandfathered, but later phases and any new Michigan site face a moratorium and codified ratepayer terms."
+  },
+  "WI": {
+   "name": "Wisconsin",
+   "risk": 4,
+   "stance": "Hostile",
+   "policy": [
+    "PSC ruling could force Oracle to post $7B+ of collateral for We Energies plant and line costs at Port Washington; Oracle sued and offered ~$700M (10%).",
+    "Marquette: 70% say data center costs outweigh benefits, up from 55% six months earlier. 7 projects worth $57B pending.",
+    "Local pauses: Madison, Superior, Oshkosh, Manitowoc Co.; Wrightstown voters rejected a project."
+   ],
+   "race": {
+    "office": "Governor (open)",
+    "cands": [
+     [
+      "David Crowley",
+      "D"
+     ],
+     [
+      "Tom Tiffany",
+      "R"
+     ]
+    ],
+    "polls": [
+     [
+      "Marquette",
+      "Sep 30",
+      49,
+      46
+     ]
+    ],
+    "rating": "Toss-up (Cook) / Lean D (Sabato)",
+    "positions": [
+     "Tiffany (R): no new data centers unless standards are met, end state subsidies, local veto, no farmland conversion. Ad brands his opponent 'Data Center David Crowley'.",
+     "Crowley (D): opposes a statewide moratorium; wants guardrails and incentives tied to jobs. Both want an NDA ban and developers paying grid upgrades."
+    ]
+   },
+   "implication": "Unusual case where the Republican is the more restrictive candidate. A Tiffany win raises the odds that the PSC collateral stands and that subsidies end, both bad for Port Washington economics."
+  },
+  "GA": {
+   "name": "Georgia",
+   "risk": 3.5,
+   "stance": "Contested",
+   "policy": [
+    "No statewide law; 8 state bills failed or pending.",
+    "Local pauses: Savannah and Chatham Co. (155 days), Americus; Fayetteville banned; Atlanta Beltline area prohibited.",
+    "Two of five PSC seats on the Nov 3 ballot; Democrats need both to flip the 3-2 GOP majority that sets Georgia Power large-load rates."
+   ],
+   "race": {
+    "office": "Governor (open)",
+    "cands": [
+     [
+      "Rick Jackson",
+      "R"
+     ],
+     [
+      "Keisha Lance Bottoms",
+      "D"
+     ]
+    ],
+    "polls": [
+     [
+      "Wedgewood",
+      "Oct 2-3",
+      51,
+      49
+     ],
+     [
+      "Big Data Poll",
+      "Sep 21-23",
+      50.5,
+      49.5
+     ],
+     [
+      "InsiderAdvantage",
+      "Sep 22-23",
+      48,
+      46
+     ]
+    ],
+    "rating": "Toss-up",
+    "positions": [
+     "Democratic side has called for a moratorium on new construction (BofA, Oct 5).",
+     "Jackson (R): avg lead 0.9 pts across four pollsters."
+    ]
+   },
+   "implication": "A Bottoms win plus a PSC flip would reopen large-load cost allocation (BofA flags Southern Co.). That is the main risk to un-energized Georgia builds like Sandersville and the Dalton expansion."
+  },
+  "OH": {
+   "name": "Ohio",
+   "risk": 4,
+   "stance": "Hostile, bipartisan",
+   "policy": [
+    "Gov. DeWine paused new tax-exemption requests (May 27); SB 646 pending.",
+    "55 local moratoriums; 21 local ballot measures on Nov 3.",
+    "AEP Ohio already has an approved large-load tariff."
+   ],
+   "race": {
+    "office": "Governor (open)",
+    "cands": [
+     [
+      "Amy Acton",
+      "D"
+     ],
+     [
+      "Vivek Ramaswamy",
+      "R"
+     ]
+    ],
+    "polls": [
+     [
+      "USA Today/Suffolk",
+      "Oct 12",
+      50,
+      41
+     ],
+     [
+      "Bowling Green/YouGov",
+      "Oct 12",
+      48,
+      45
+     ],
+     [
+      "co/efficient",
+      "Oct 12",
+      43,
+      45
+     ],
+     [
+      "Big Data Poll",
+      "Oct 12",
+      47,
+      48
+     ],
+     [
+      "CNN",
+      "Oct 8",
+      50,
+      42
+     ],
+     [
+      "NYT/Siena",
+      "Oct 3",
+      49,
+      45
+     ]
+    ],
+    "rating": "Toss-up (Cook) / Lean R (Sabato)",
+    "positions": [
+     "Ramaswamy (R): moratorium; make operators pay nearby residents' power bills.",
+     "Acton (D): conditional moratorium."
+    ]
+   },
+   "implication": "No focus-desk collateral in Ohio, but it is the clearest sign that restriction is now bipartisan: both nominees run on a pause."
+  },
+  "PA": {
+   "name": "Pennsylvania",
+   "risk": 2.5,
+   "stance": "Build with standards",
+   "policy": [
+    "Aug 18: Gov. Shapiro's EO 2026-05 sets GRID requirements for 25 MW+ and removes fast-track permitting.",
+    "HB 2496 (lets municipalities pause projects) passed the House 201-1.",
+    "BofA: key variables are allowed ROE and large-load pricing reviews."
+   ],
+   "race": {
+    "office": "Governor",
+    "cands": [
+     [
+      "Josh Shapiro",
+      "D"
+     ],
+     [
+      "Stacy Garrity",
+      "R"
+     ]
+    ],
+    "polls": [
+     [
+      "Quinnipiac",
+      "Oct 7",
+      59,
+      34
+     ],
+     [
+      "Susquehanna",
+      "Oct 7",
+      52,
+      31
+     ],
+     [
+      "PennLive",
+      "Oct 1",
+      55,
+      28
+     ]
+    ],
+    "rating": "Solid D",
+    "positions": [
+     "Shapiro (D): pro-build with cost and grid standards."
+    ]
+   },
+   "implication": "Policy continuity is near certain. Risk is local: if HB 2496 becomes law, townships gain pause authority over sites without final approvals."
+  },
+  "NJ": {
+   "name": "New Jersey",
+   "risk": 3.5,
+   "stance": "Cost-shifting to operators",
+   "policy": [
+    "Jul 7: Fair Share Act. Operators of 50 MW+ must commit to 85% of projected power costs for 10 years.",
+    "Aug 28: energy and water reporting law.",
+    "93 municipal bans (Bayonne, Cherry Hill, Medford, Millville, Monroe Twp)."
+   ],
+   "race": null,
+   "implication": "No 2026 statewide race. The cost has already moved to operators: take-or-pay power commitments raise fixed costs for Vineland and Kenilworth."
+  },
+  "VA": {
+   "name": "Virginia",
+   "risk": 3,
+   "stance": "Tightening",
+   "policy": [
+    "Sep 18: Gov. Spanberger's EO 22 ends by-right zoning for 25 MW+.",
+    "$0.011/kWh data center tax enacted; 60+ bills tracked. Loudoun Co. ended by-right zoning."
+   ],
+   "race": null,
+   "implication": "No 2026 governor race (Spanberger elected 2025). Projects already zoned and under construction are mostly insulated; new sites face discretionary review."
+  },
+  "IL": {
+   "name": "Illinois",
+   "risk": 3,
+   "stance": "Incentives paused",
+   "policy": [
+    "Tax-incentive pause since Jul 1, indefinite.",
+    "Local: Lawrence Co. (2 yr), Champaign Co., Mattoon; Chicago ordinance pending."
+   ],
+   "race": {
+    "office": "Governor",
+    "cands": [
+     [
+      "JB Pritzker",
+      "D"
+     ],
+     [
+      "Darren Bailey",
+      "R"
+     ]
+    ],
+    "polls": [
+     [
+      "CNW/PPP",
+      "Oct 6",
+      54,
+      34
+     ]
+    ],
+    "rating": "Solid D",
+    "positions": []
+   },
+   "implication": "Continuity. Pressure falls on project economics through lost incentives rather than outright bans; the Elk Grove cluster already has power."
+  },
+  "NM": {
+   "name": "New Mexico",
+   "risk": 3.5,
+   "stance": "Contested",
+   "policy": [
+    "Project Jupiter faces public-records and permit litigation; a June suit was dismissed with leave to refile.",
+    "Statewide moratorium proposed for the 2027 session. Local pauses: Rio Communities, Colfax Co."
+   ],
+   "race": {
+    "office": "Governor (open)",
+    "cands": [
+     [
+      "Deb Haaland",
+      "D"
+     ],
+     [
+      "Gregg Hull",
+      "R"
+     ]
+    ],
+    "polls": [
+     [
+      "Albuquerque Journal",
+      "Oct 11",
+      49,
+      42
+     ],
+     [
+      "KOB/SurveyUSA",
+      "Oct 5",
+      47,
+      41
+     ]
+    ],
+    "rating": "Solid D",
+    "positions": []
+   },
+   "implication": "A Haaland administration sets the tone for the 2027 moratorium debate while Jupiter's off-grid gas and fuel-cell microgrid still needs air permits."
+  },
+  "LA": {
+   "name": "Louisiana",
+   "risk": 1.5,
+   "stance": "Supportive",
+   "policy": [
+    "Jun 25: Gov. Landry's EO 26-058 requires full infrastructure funding before tax incentives.",
+    "Entergy Louisiana building 3 GW of new gas generation for Hyperion. New Orleans interim zoning only."
+   ],
+   "race": null,
+   "implication": "No 2026 governor race. The most supportive state on the map; the main risk is construction and cost, not politics."
+  },
+  "ND": {
+   "name": "North Dakota",
+   "risk": 1.5,
+   "stance": "Supportive, local friction",
+   "policy": [
+    "No statewide restrictions.",
+    "7 local moratoriums near Applied Digital's Polaris Forge campuses; annexation fight around Harwood."
+   ],
+   "race": null,
+   "implication": "No 2026 governor race. State policy is supportive; watch county pauses around expansion parcels."
+  },
+  "OK": {
+   "name": "Oklahoma",
+   "risk": 2.5,
+   "stance": "Mixed",
+   "policy": [
+    "Oklahoma City moratorium through Dec 31, 2026.",
+    "SB 1488 statewide bill in committee; HB 2992 ratepayer protection signed."
+   ],
+   "race": {
+    "office": "Governor (open)",
+    "cands": [
+     [
+      "Mike Mazzei",
+      "R"
+     ],
+     [
+      "Cyndi Munson",
+      "D"
+     ]
+    ],
+    "polls": [],
+    "rating": "Solid R",
+    "positions": []
+   },
+   "implication": "Low election risk. BofA lists Oklahoma among states where a Democratic upset would carry policy risk, but no public polling shows one."
+  },
+  "KY": {
+   "name": "Kentucky",
+   "risk": 3,
+   "stance": "Tightening",
+   "policy": [
+    "Aug 6: Gov. Beshear's EO directs permit denials for harmful impacts and bars utility rate increases tied to data centers.",
+    "Woodford Co. permanent ban; Louisville Metro 6-month; Lexington-Fayette pause."
+   ],
+   "race": null,
+   "implication": "No 2026 governor race (next is 2027). The EO puts the burden on Hawesville to prove no rate impact on other customers."
+  },
+  "NC": {
+   "name": "North Carolina",
+   "risk": 3,
+   "stance": "Tightening",
+   "policy": [
+    "Jul 7: restrictions on certified data centers signed; H 1189 (2-year pause for 100 MW+) in committee.",
+    "Local pauses in 14 counties and 25+ towns: Charlotte, Greensboro, Cary, Durham."
+   ],
+   "race": null,
+   "implication": "No 2026 governor race. Operating sites are fine; new 100 MW+ builds face local and possible statewide pauses."
+  },
+  "AL": {
+   "name": "Alabama",
+   "risk": 2,
+   "stance": "Mostly supportive",
+   "policy": [
+    "SB 270 (PSC review) pending.",
+    "Local 6-month pauses in Leeds, Homewood, Springville, Chelsea, Westover."
+   ],
+   "race": {
+    "office": "Governor (open)",
+    "cands": [
+     [
+      "Tommy Tuberville",
+      "R"
+     ],
+     [
+      "Doug Jones",
+      "D"
+     ]
+    ],
+    "polls": [],
+    "rating": "Solid R",
+    "positions": []
+   },
+   "implication": "Low risk; small exposure (Auburn)."
+  },
+  "MO": {
+   "name": "Missouri",
+   "risk": 2.5,
+   "stance": "Local friction",
+   "policy": [
+    "No statewide action. Jackson Co. 180-day moratorium; St. Charles city ban; Springfield 120-day.",
+    "Independence plans to rebuild a retired municipal plant to serve the Nebius campus."
+   ],
+   "race": null,
+   "implication": "No 2026 governor race. Risk sits in Jackson County politics and power-plant execution."
+  },
+  "WA": {
+   "name": "Washington",
+   "risk": 2.5,
+   "stance": "Incentives phasing out",
+   "policy": [
+    "ESSB 6231 phases out the sales-tax exemption.",
+    "Local pauses: Seattle, Spokane, Snohomish Co., Skagit."
+   ],
+   "race": null,
+   "implication": "No 2026 governor race. Economics, not bans."
+  },
+  "AZ": {
+   "name": "Arizona",
+   "risk": 2.5,
+   "stance": "Incentives paused",
+   "policy": [
+    "Tax-incentive pause since Jun 13.",
+    "Tucson siting limits for 20 MW+; Pima Co. 120-day."
+   ],
+   "race": {
+    "office": "Governor",
+    "cands": [
+     [
+      "Katie Hobbs",
+      "D"
+     ],
+     [
+      "Andy Biggs",
+      "R"
+     ]
+    ],
+    "polls": [
+     [
+      "Arizona State",
+      "Oct 6",
+      47,
+      34
+     ]
+    ],
+    "rating": "Lean D",
+    "positions": []
+   },
+   "implication": "No focus-desk collateral. BofA thinks the market overstates election risk here."
+  }
+ },
+ "projects": [
+  {
+   "id": "corz-denton",
+   "name": "Denton",
+   "owner": "CORZ",
+   "dev": "Core Scientific",
+   "tenant": "CoreWeave",
+   "st": "TX",
+   "lat": 33.21,
+   "lon": -97.13,
+   "mw": 260,
+   "power": "E",
+   "pc": true,
+   "note": "~260 MW billing (Jul 2026).",
+   "pv": "CORZ Q2 FY26 deck: ~260 MW billing",
+   "x": 476.7,
+   "y": 430.6
+  },
+  {
+   "id": "corz-dalton",
+   "name": "Dalton",
+   "owner": "CORZ",
+   "dev": "Core Scientific",
+   "tenant": "CoreWeave / neocloud (AMD credit support)",
+   "st": "GA",
+   "lat": 34.77,
+   "lon": -84.97,
+   "mw": 295,
+   "power": "P",
+   "pc": true,
+   "note": "Existing mining interconnect. ~175 MW CoreWeave (~30 billing), completion early 2027; ~120 MW neocloud for 2H27.",
+   "pv": "CORZ deck: ~30 of 175 MW billing; leased power includes secured grid connection",
+   "x": 701.4,
+   "y": 383.2
+  },
+  {
+   "id": "corz-musk",
+   "name": "Muskogee",
+   "owner": "CORZ",
+   "dev": "Core Scientific",
+   "tenant": "CoreWeave / AMD",
+   "st": "OK",
+   "lat": 35.75,
+   "lon": -95.37,
+   "mw": 152,
+   "power": "P",
+   "pc": true,
+   "note": "~70 MW billing; ~82 MW AMD direct for 2H27.",
+   "pv": "CORZ deck: 70 MW billing; AMD 82 MW 2H27 on secured grid power",
+   "x": 509.5,
+   "y": 372.6
+  },
+  {
+   "id": "corz-marble",
+   "name": "Marble",
+   "owner": "CORZ",
+   "dev": "Core Scientific",
+   "tenant": "CoreWeave",
+   "st": "NC",
+   "lat": 35.17,
+   "lon": -83.93,
+   "mw": 65,
+   "power": "E",
+   "pc": true,
+   "note": "~65 MW billing.",
+   "pv": "CORZ deck: billing",
+   "x": 719.4,
+   "y": 371.8
+  },
+  {
+   "id": "corz-austin",
+   "name": "Austin",
+   "owner": "CORZ",
+   "dev": "Core Scientific",
+   "tenant": "CoreWeave",
+   "st": "TX",
+   "lat": 30.27,
+   "lon": -97.74,
+   "mw": 20,
+   "power": "E",
+   "pc": true,
+   "note": "~20 MW billing.",
+   "pv": "CORZ deck: billing",
+   "x": 464,
+   "y": 497.4
+  },
+  {
+   "id": "corz-pecos",
+   "name": "Pecos",
+   "owner": "CORZ",
+   "dev": "Core Scientific",
+   "tenant": "AMD",
+   "st": "TX",
+   "lat": 31.42,
+   "lon": -103.49,
+   "mw": 185,
+   "power": "C",
+   "pc": true,
+   "note": "AMD direct, 1H27. Existing mining load; added load still passes through the ERCOT audit.",
+   "pv": "CORZ deck: leased power includes secured grid-connected power",
+   "x": 353.7,
+   "y": 465.8
+  },
+  {
+   "id": "corz-hunt",
+   "name": "Hunt County",
+   "owner": "CORZ",
+   "dev": "Core Scientific",
+   "tenant": "AMD",
+   "st": "TX",
+   "lat": 33.12,
+   "lon": -96.08,
+   "mw": 110,
+   "power": "C",
+   "pc": true,
+   "note": "AMD direct, 1H28. CORZ says leased MW have secured grid power; the incremental load still sits in the ERCOT audit.",
+   "pv": "CORZ deck: leased power includes secured grid-connected power (new load still in ERCOT audit)",
+   "x": 496.5,
+   "y": 432.8
+  },
+  {
+   "id": "corz-auburn",
+   "name": "Auburn",
+   "owner": "CORZ",
+   "dev": "Core Scientific",
+   "tenant": "Neocloud (AMD credit support)",
+   "st": "AL",
+   "lat": 32.61,
+   "lon": -85.48,
+   "mw": 32,
+   "power": "C",
+   "pc": true,
+   "note": "1H27.",
+   "pv": "CORZ deck: secured grid power",
+   "x": 697.5,
+   "y": 433.3
+  },
+  {
+   "id": "wulf-lm",
+   "name": "Lake Mariner",
+   "owner": "WULF",
+   "dev": "TeraWulf",
+   "tenant": "Fluidstack (Google backstop), Core42",
+   "st": "NY",
+   "lat": 43.36,
+   "lon": -78.6,
+   "mw": 500,
+   "power": "P",
+   "pc": true,
+   "note": "NYISO. 102 MW revenue-generating (Jul). CB-4 first rent late Sep 2026; CB-5 energizing Jan 2027. ~$1.7B capex remaining. Permitted buildings exempt from EO 62.",
+   "pv": "WULF Q2 8-K: 102 MW revenue-generating; CB-4/5 (336 MW) under construction",
+   "x": 782.1,
+   "y": 172.4
+  },
+  {
+   "id": "wulf-cay",
+   "name": "Lake Hawkeye / Cayuga",
+   "owner": "WULF",
+   "dev": "TeraWulf",
+   "tenant": "None",
+   "st": "NY",
+   "lat": 42.53,
+   "lon": -76.53,
+   "mw": 320,
+   "power": "N",
+   "pc": false,
+   "note": "Pending permits; frozen by the NY moratorium.",
+   "pv": "Not in Q2 release; pending permits",
+   "x": 819.3,
+   "y": 184.4
+  },
+  {
+   "id": "wulf-abe",
+   "name": "Abernathy JV",
+   "owner": "WULF",
+   "dev": "Fluidstack JV (WULF selling)",
+   "tenant": "Fluidstack (Google backstop)",
+   "st": "TX",
+   "lat": 33.83,
+   "lon": -101.84,
+   "mw": 168,
+   "power": "C",
+   "pc": true,
+   "note": "SPP grid. WULF agreed in Jul 2026 to sell its 50.1% for ~$530M (payments through Apr 2027); JV notes leave WULF.",
+   "pv": "WULF: SPP site, delivery 2H26; stake being sold",
+   "x": 388.8,
+   "y": 413.2
+  },
+  {
+   "id": "wulf-ky",
+   "name": "Hawesville",
+   "owner": "WULF",
+   "dev": "TeraWulf",
+   "tenant": "Anthropic",
+   "st": "KY",
+   "lat": 37.9,
+   "lon": -86.75,
+   "mw": 401,
+   "power": "C",
+   "pc": true,
+   "note": "Former Century Aluminum smelter. KY PSC approved a 482 MW Big Rivers/Kenergy service contract on Aug 21, 2026 (MISO power, curtail in grid emergencies). First capacity 2H27, full early 2028. $500M bridge; $3.5B takeout not closed.",
+   "pv": "KY PSC approved 482 MW Big Rivers/Kenergy contract (Aug 21, 2026); on-site substation energized",
+   "x": 661.8,
+   "y": 315.4
+  },
+  {
+   "id": "apld-pf1",
+   "name": "Polaris Forge 1 (Ellendale)",
+   "owner": "APLD",
+   "dev": "Applied Digital",
+   "tenant": "CoreWeave",
+   "st": "ND",
+   "lat": 46,
+   "lon": -98.53,
+   "mw": 550,
+   "power": "E",
+   "pc": true,
+   "note": "Energized and running: 175 MW live (Bldg 1 Oct 2025; Bldg 2 ph. 1 Jun 2026). Bldg 4 (150 MW) under construction; that lease moves to a CoreWeave sub only once it is investment grade.",
+   "pv": "APLD: Bldg 1 live Oct 2025, Bldg 2 RFS Jun 30, 2026; Bldg 4 under construction",
+   "x": 458.1,
+   "y": 137.9
+  },
+  {
+   "id": "apld-pf2",
+   "name": "Polaris Forge 2 (Harwood)",
+   "owner": "APLD",
+   "dev": "Applied Digital",
+   "tenant": "IG hyperscaler",
+   "st": "ND",
+   "lat": 46.98,
+   "lon": -96.88,
+   "mw": 200,
+   "power": "C",
+   "pc": true,
+   "note": "$5B/15-yr. First building 2026, full 200 MW 2027. Annexation fight and county pauses nearby.",
+   "pv": "Supplier Cass County Electric / Minnkota; contract last reported as being finalized",
+   "x": 484.3,
+   "y": 116.2
+  },
+  {
+   "id": "apld-pf3",
+   "name": "Polaris Forge 3",
+   "owner": "APLD",
+   "dev": "Applied Digital",
+   "tenant": "IG hyperscaler",
+   "st": "ND",
+   "lat": 47.3,
+   "lon": -100.6,
+   "mw": 300,
+   "power": "C",
+   "pc": true,
+   "note": "~430 MW grid-connected; first operations Aug 2027. Site not named (marker approximate).",
+   "pv": "APLD: ~430 MW grid-connected utility power",
+   "x": 426.9,
+   "y": 107.3
+  },
+  {
+   "id": "apld-df1",
+   "name": "Delta Forge 1 (Boyce)",
+   "owner": "APLD",
+   "dev": "Applied Digital",
+   "tenant": "IG hyperscaler",
+   "st": "LA",
+   "lat": 31.39,
+   "lon": -92.67,
+   "mw": 300,
+   "power": "C",
+   "pc": true,
+   "note": "$7.5B/15-yr; first operations mid-2027. Cleco signed an initial supply deal and plans a 756 MW gas plant (LPSC approval pending), with interim purchases from Tenaska Frontier.",
+   "pv": "Initial Cleco supply deal (May 2026); 756 MW gas plant pending LPSC",
+   "x": 562.3,
+   "y": 471.1
+  },
+  {
+   "id": "hut-rb",
+   "name": "River Bend",
+   "owner": "HUT",
+   "dev": "Hut 8",
+   "tenant": "Fluidstack / Anthropic (Google backstop)",
+   "st": "LA",
+   "lat": 30.79,
+   "lon": -91.38,
+   "mw": 245,
+   "power": "C",
+   "pc": true,
+   "note": "Entergy Louisiana; 330 MW utility capacity under construction. First data hall Q2 2027.",
+   "pv": "HUT Q2: 330 MW Entergy utility capacity under construction",
+   "x": 587.8,
+   "y": 483.7
+  },
+  {
+   "id": "hut-bp",
+   "name": "Beacon Point",
+   "owner": "HUT",
+   "dev": "Hut 8",
+   "tenant": "AA- or better tenant",
+   "st": "TX",
+   "lat": 27.8,
+   "lon": -97.6,
+   "mw": 704,
+   "power": "C",
+   "pc": true,
+   "note": "1 GW AEP Texas interconnection agreement. Energization Q1 2027 (inside the audit window); first hall Q3 2027; Phase 2 halls Q2 2028, Phase 2 financing not arranged.",
+   "pv": "HUT: 1 GW AEP Texas interconnection agreement; energize Q1 2027",
+   "x": 465.8,
+   "y": 553.4
+  },
+  {
+   "id": "cifr-bl",
+   "name": "Barber Lake",
+   "owner": "CIFR",
+   "dev": "Cipher Digital",
+   "tenant": "Fluidstack (Google backstop)",
+   "st": "TX",
+   "lat": 32.39,
+   "lon": -100.86,
+   "mw": 300,
+   "power": "P",
+   "pc": true,
+   "note": "Commencement expected Sep 2026; tenant in partial occupancy. Google backstop only effective after rent commencement and capped.",
+   "pv": "CIFR Q2: tenant in partial occupancy; 300 MW interconnection",
+   "x": 405.5,
+   "y": 447.1
+  },
+  {
+   "id": "cifr-bp",
+   "name": "Black Pearl (Wink)",
+   "owner": "CIFR",
+   "dev": "Cipher Digital",
+   "tenant": "AWS",
+   "st": "TX",
+   "lat": 31.75,
+   "lon": -103.16,
+   "mw": 300,
+   "power": "P",
+   "pc": true,
+   "note": "Delivery began Aug 2026, two months early; rent commenced. Phase II under way.",
+   "pv": "CIFR Q2: delivery began Aug 2026, rent commenced; Phase II in build",
+   "x": 360.6,
+   "y": 458.8
+  },
+  {
+   "id": "cifr-sr",
+   "name": "Stingray",
+   "owner": "CIFR",
+   "dev": "Cipher Digital",
+   "tenant": "Not leased",
+   "st": "TX",
+   "lat": 32.32,
+   "lon": -102.55,
+   "mw": 100,
+   "power": "C",
+   "pc": true,
+   "note": "Front-of-meter; fully funded by the 6.000% notes. No tenant yet.",
+   "pv": "CIFR 10-K: front-of-meter, energization targeted 1H26",
+   "x": 373.2,
+   "y": 446.7
+  },
+  {
+   "id": "keel-pc",
+   "name": "Panther Creek",
+   "owner": "KEEL",
+   "dev": "Keel",
+   "tenant": "Leasing",
+   "st": "PA",
+   "lat": 40.85,
+   "lon": -75.88,
+   "mw": 300,
+   "power": "C",
+   "pc": true,
+   "note": "Grid interconnection in place.",
+   "pv": "KEEL Q2: grid interconnections in place; uncommitted 2027 PJM capacity",
+   "x": 837.9,
+   "y": 219.7
+  },
+  {
+   "id": "keel-sh",
+   "name": "Sharon",
+   "owner": "KEEL",
+   "dev": "Keel",
+   "tenant": "Leasing",
+   "st": "PA",
+   "lat": 41.23,
+   "lon": -80.49,
+   "mw": 110,
+   "power": "C",
+   "pc": true,
+   "note": "Existing interconnection.",
+   "pv": "KEEL Q2: grid interconnection; 2027 PJM capacity",
+   "x": 759.4,
+   "y": 225.7
+  },
+  {
+   "id": "keel-ml",
+   "name": "Moses Lake",
+   "owner": "KEEL",
+   "dev": "Keel",
+   "tenant": "Leasing",
+   "st": "WA",
+   "lat": 47.13,
+   "lon": -119.28,
+   "mw": 120,
+   "power": "C",
+   "pc": true,
+   "note": "Existing interconnection.",
+   "pv": "KEEL Q2: grid interconnection; 2027 Washington capacity",
+   "x": 140.4,
+   "y": 68.9
+  },
+  {
+   "id": "clsk-sv",
+   "name": "Sandersville",
+   "owner": "CLSK",
+   "dev": "CleanSpark",
+   "tenant": "High-IG tech co. (reported Meta)",
+   "st": "GA",
+   "lat": 32.98,
+   "lon": -82.81,
+   "mw": 175,
+   "power": "P",
+   "pc": true,
+   "note": "20-yr NNN, $6.6B, 175 MW. Existing mining site energized since 2022 (utility not named); AI deliveries from Q4 2027. Missed milestones can trigger rent abatement or termination.",
+   "pv": "Operating CleanSpark mining site since 2022; utility not named",
+   "x": 746.7,
+   "y": 418.7
+  },
+  {
+   "id": "clsk-tx",
+   "name": "Sealy / Brazoria",
+   "owner": "CLSK",
+   "dev": "CleanSpark",
+   "tenant": "LOI only",
+   "st": "TX",
+   "lat": 29.4,
+   "lon": -95.9,
+   "mw": 885,
+   "power": "N",
+   "pc": false,
+   "note": "LOI, no lease. ERCOT-paused.",
+   "pv": "LOI only; 'secured and planned' power, not split",
+   "x": 500,
+   "y": 517.4
+  },
+  {
+   "id": "nbis-vin",
+   "name": "Vineland",
+   "owner": "NBIS",
+   "dev": "Nebius",
+   "tenant": "Nebius (serves Microsoft)",
+   "st": "NJ",
+   "lat": 39.49,
+   "lon": -75.03,
+   "mw": 300,
+   "power": "P",
+   "pc": true,
+   "note": "Behind-the-meter generation; NJ Fair Share Act applies.",
+   "pv": "~50 MW phase 1 operational (DataOne/Epoch); behind-the-meter",
+   "x": 858.8,
+   "y": 247
+  },
+  {
+   "id": "nbis-ind",
+   "name": "Independence",
+   "owner": "NBIS",
+   "dev": "Nebius",
+   "tenant": "Nebius",
+   "st": "MO",
+   "lat": 39.09,
+   "lon": -94.41,
+   "mw": 1200,
+   "power": "N",
+   "pc": false,
+   "note": "City to rebuild a retired plant to serve it. Jackson Co. 180-day pause.",
+   "pv": "City plans to rebuild retired plant; no supply contract disclosed",
+   "x": 525.8,
+   "y": 295.9
+  },
+  {
+   "id": "nbis-pa",
+   "name": "Butler Twp (Schuylkill Co.)",
+   "owner": "NBIS",
+   "dev": "Nebius",
+   "tenant": "Nebius",
+   "st": "PA",
+   "lat": 40.82,
+   "lon": -76.2,
+   "mw": 1200,
+   "power": "C",
+   "pc": true,
+   "note": "Highridge Business Park. PPL energy service agreement; 260 MW by Oct 2027, 1.2 GW full build.",
+   "pv": "Nebius: dedicated energy service agreement with PPL; 260 MW by Oct 2027",
+   "x": 832.7,
+   "y": 221.5
+  },
+  {
+   "id": "nscale-ward",
+   "name": "Ward County",
+   "owner": "NSCALE",
+   "dev": "Nscale",
+   "tenant": "Not disclosed",
+   "st": "TX",
+   "lat": 31.55,
+   "lon": -103.1,
+   "mw": 200,
+   "power": "C",
+   "pc": true,
+   "note": "$1.85B IG DDTL. Host likely Ionic Digital's energized Ward County campus; expansion load provisional in ERCOT Batch Zero.",
+   "pv": "Likely hosted at Ionic Digital's Ward County campus (234 MW energized since 2023; expansion provisional in Batch Zero). Host not confirmed by Nscale.",
+   "x": 361.4,
+   "y": 463.5
+  },
+  {
+   "id": "nscale-nc",
+   "name": "Madison",
+   "owner": "NSCALE",
+   "dev": "Nscale",
+   "tenant": "Not disclosed",
+   "st": "NC",
+   "lat": 36.39,
+   "lon": -79.96,
+   "mw": 40,
+   "power": "E",
+   "pc": true,
+   "note": "Colocation retrofit.",
+   "pv": "Colocation retrofit",
+   "x": 786.9,
+   "y": 333.5
+  },
+  {
+   "id": "iren-ch",
+   "name": "Childress",
+   "owner": "IREN",
+   "dev": "IREN",
+   "tenant": "IREN (serves Microsoft)",
+   "st": "TX",
+   "lat": 34.43,
+   "lon": -100.2,
+   "mw": 750,
+   "power": "E",
+   "pc": true,
+   "note": "750 MW energized site; $9.7B Microsoft cloud contract.",
+   "pv": "IREN: 750 MW site energized",
+   "x": 420.1,
+   "y": 401.1
+  },
+  {
+   "id": "iren-sw",
+   "name": "Sweetwater",
+   "owner": "IREN",
+   "dev": "IREN",
+   "tenant": "Not disclosed",
+   "st": "TX",
+   "lat": 32.47,
+   "lon": -100.41,
+   "mw": 2000,
+   "power": "P",
+   "pc": true,
+   "note": "Sweetwater 1 (1.4 GW) substation energized May 2026; 'conditional base load' in Batch Zero, still subject to approvals. 300 MW targeted Q4 2027.",
+   "pv": "IREN: Sweetwater 1 substation energized (May 2026); conditional ERCOT base load",
+   "x": 414.1,
+   "y": 445.6
+  },
+  {
+   "id": "riot-rock",
+   "name": "Rockdale",
+   "owner": "RIOT",
+   "dev": "Riot",
+   "tenant": "Frontier AI lab (reported Anthropic) + AMD",
+   "st": "TX",
+   "lat": 30.66,
+   "lon": -97,
+   "mw": 241,
+   "power": "E",
+   "pc": true,
+   "note": "Existing interconnection. 96 MW Dec 2027, 191 MW Jun 2028. $573M bridge matures Dec 31, 2026, a year before rent; IG backstop not finalized.",
+   "pv": "RIOT 8-K: existing interconnection, power secured",
+   "x": 478.6,
+   "y": 488.7
+  },
+  {
+   "id": "riot-cor",
+   "name": "Corsicana",
+   "owner": "RIOT",
+   "dev": "Riot",
+   "tenant": "LOI only",
+   "st": "TX",
+   "lat": 32.09,
+   "lon": -96.47,
+   "mw": 1300,
+   "power": "P",
+   "pc": true,
+   "note": "Non-binding LOI; new load exposed to ERCOT audit.",
+   "pv": "Riot: 1 GW fully approved, 345 kV interconnection; mining load energized",
+   "x": 489,
+   "y": 456.2
+  },
+  {
+   "id": "crwv-lan",
+   "name": "Lancaster",
+   "owner": "CRWV",
+   "dev": "CoreWeave",
+   "tenant": "CoreWeave",
+   "st": "PA",
+   "lat": 40.04,
+   "lon": -76.31,
+   "mw": 300,
+   "power": "N",
+   "pc": false,
+   "note": "$6B plan; power path not disclosed.",
+   "pv": "Blue Owl to fund ~$200M PPL grid upgrades; no supply agreement disclosed",
+   "x": 834.5,
+   "y": 239.4
+  },
+  {
+   "id": "crwv-ken",
+   "name": "Kenilworth",
+   "owner": "CRWV",
+   "dev": "CoreWeave",
+   "tenant": "CoreWeave",
+   "st": "NJ",
+   "lat": 40.68,
+   "lon": -74.29,
+   "mw": 250,
+   "power": "C",
+   "pc": false,
+   "note": "Under construction; power source not disclosed. Fair Share Act applies.",
+   "pv": "Converted NEST Center; power source not disclosed",
+   "x": 865.2,
+   "y": 217.6
+  },
+  {
+   "id": "crwv-elk",
+   "name": "Elk Grove Village",
+   "owner": "CRWV",
+   "dev": "Elk Grove Village Property",
+   "tenant": "CoreWeave",
+   "st": "IL",
+   "lat": 42,
+   "lon": -87.97,
+   "mw": 100,
+   "power": "C",
+   "pc": true,
+   "note": "Established ComEd cluster. MW not disclosed (100 assumed).",
+   "pv": "Established ComEd cluster",
+   "x": 632.3,
+   "y": 223.8
+  },
+  {
+   "id": "crwv-rva",
+   "name": "Digital Drive (Richmond)",
+   "owner": "CRWV",
+   "dev": "Blue Owl / PowerHouse",
+   "tenant": "CoreWeave",
+   "st": "VA",
+   "lat": 37.54,
+   "lon": -77.43,
+   "mw": 76,
+   "power": "C",
+   "pc": false,
+   "note": "15-yr, $2.94B. Ops 2027-28.",
+   "pv": "Utility arrangement not disclosed",
+   "x": 826.8,
+   "y": 299.4
+  },
+  {
+   "id": "glxy-hel",
+   "name": "Helios (Galaxy)",
+   "owner": "GLXY",
+   "dev": "Galaxy",
+   "tenant": "CoreWeave",
+   "st": "TX",
+   "lat": 33.62,
+   "lon": -100.84,
+   "mw": 526,
+   "power": "P",
+   "pc": true,
+   "note": "800 MW approved by ERCOT before the pause. Ph. I 133 MW delivered, rent from Q2 2026; Ph. II 260 MW 1H27; Ph. III ~133 MW.",
+   "pv": "GLXY: Ph. I 133 MW delivered; 800 MW ERCOT-approved",
+   "x": 407.3,
+   "y": 419
+  },
+  {
+   "id": "orcl-abi",
+   "name": "Stargate I (Abilene)",
+   "owner": "ORCL",
+   "dev": "Crusoe / Blue Owl",
+   "tenant": "Oracle",
+   "st": "TX",
+   "lat": 32.45,
+   "lon": -99.73,
+   "mw": 1200,
+   "power": "E",
+   "pc": true,
+   "note": "Operating and ramping.",
+   "pv": "Operating",
+   "x": 427,
+   "y": 446.7
+  },
+  {
+   "id": "orcl-fro",
+   "name": "Frontier (Shackelford)",
+   "owner": "ORCL",
+   "dev": "Vantage",
+   "tenant": "Oracle",
+   "st": "TX",
+   "lat": 32.74,
+   "lon": -99.35,
+   "mw": 1400,
+   "power": "N",
+   "pc": false,
+   "note": "Behind-the-meter gas microgrid; new air permits blocked by the TCEQ pause. Same fact pattern as Jupiter.",
+   "pv": "BTM gas microgrid needs TCEQ air permits (paused)",
+   "x": 434.5,
+   "y": 440.3
+  },
+  {
+   "id": "orcl-pw",
+   "name": "Lighthouse (Port Washington)",
+   "owner": "ORCL",
+   "dev": "Vantage",
+   "tenant": "Oracle",
+   "st": "WI",
+   "lat": 43.39,
+   "lon": -87.88,
+   "mw": 1000,
+   "power": "C",
+   "pc": true,
+   "note": "We Energies service contested: PSC collateral ruling ($7B+) under Oracle lawsuit.",
+   "pv": "We Energies service under PSC tariff; collateral contested",
+   "x": 631.1,
+   "y": 192.1
+  },
+  {
+   "id": "orcl-mi",
+   "name": "Stargate Michigan (Saline)",
+   "owner": "ORCL",
+   "dev": "Related Digital / Blackstone",
+   "tenant": "Oracle",
+   "st": "MI",
+   "lat": 42.17,
+   "lon": -83.78,
+   "mw": 1400,
+   "power": "C",
+   "pc": true,
+   "note": "MPSC-approved DTE contract with storage.",
+   "pv": "MPSC-approved DTE contract",
+   "x": 701.5,
+   "y": 212.5
+  },
+  {
+   "id": "orcl-nm",
+   "name": "Project Jupiter",
+   "owner": "ORCL",
+   "dev": "STACK (Blue Owl) / BorderPlex",
+   "tenant": "Oracle",
+   "st": "NM",
+   "lat": 31.87,
+   "lon": -106.7,
+   "mw": 2450,
+   "power": "N",
+   "pc": false,
+   "note": "FORCE MAJEURE notice sent Sep 24, 2026. Bloom fuel cells need the Green Chile gas pipeline (slipped to Feb 1, 2027 after two State Land Office denials) and an air permit (NM Supreme Court paused proceedings). 2028 target.",
+   "pv": "Fuel cells need Green Chile pipeline (Feb 2027) + air permit; FM notice",
+   "x": 293.2,
+   "y": 449.7
+  },
+  {
+   "id": "meta-hyp",
+   "name": "Hyperion",
+   "owner": "META",
+   "dev": "Meta / Blue Owl JV",
+   "tenant": "Meta",
+   "st": "LA",
+   "lat": 32.42,
+   "lon": -91.76,
+   "mw": 2000,
+   "power": "C",
+   "pc": true,
+   "note": "Entergy building three gas plants (~3 GW) by 2028.",
+   "pv": "Entergy gas plants approved, under construction",
+   "x": 578.8,
+   "y": 446.9
+  },
+  {
+   "id": "meta-elp",
+   "name": "El Paso",
+   "owner": "META",
+   "dev": "Meta / GIP-HPS JV",
+   "tenant": "Meta",
+   "st": "TX",
+   "lat": 31.9,
+   "lon": -106.35,
+   "mw": 1000,
+   "power": "C",
+   "pc": true,
+   "note": "El Paso Electric (non-ERCOT) plus 366 MW onsite gensets that need TCEQ authorizations.",
+   "pv": "El Paso Electric + onsite gensets",
+   "x": 300,
+   "y": 449.8
+  }
+ ],
+ "leases": [
+  {
+   "site": "corz-denton",
+   "tenant": "CoreWeave",
+   "mw": 260,
+   "ann": 375,
+   "first": "2025Q1",
+   "full": "2026Q1",
+   "value": 3750,
+   "term": 12,
+   "src": "CORZ 8-K Feb 2025 ($10.2B/12-yr/590 MW)"
+  },
+  {
+   "site": "corz-dalton",
+   "tenant": "CoreWeave",
+   "mw": 175,
+   "ann": 252,
+   "first": "2026Q2",
+   "full": "2027Q1",
+   "value": 3025,
+   "term": 12,
+   "src": "CORZ Q2 FY26 deck"
+  },
+  {
+   "site": "corz-musk",
+   "tenant": "CoreWeave",
+   "mw": 70,
+   "ann": 101,
+   "first": "2025Q2",
+   "full": "2025Q4",
+   "value": 1210,
+   "term": 12,
+   "src": "CORZ Q2 FY26 deck"
+  },
+  {
+   "site": "corz-marble",
+   "tenant": "CoreWeave",
+   "mw": 65,
+   "ann": 94,
+   "first": "2025Q2",
+   "full": "2025Q4",
+   "value": 1125,
+   "term": 12,
+   "src": "CORZ Q2 FY26 deck"
+  },
+  {
+   "site": "corz-austin",
+   "tenant": "CoreWeave",
+   "mw": 20,
+   "ann": 29,
+   "first": "2025Q2",
+   "full": "2025Q3",
+   "value": 345,
+   "term": 12,
+   "src": "CORZ Q2 FY26 deck"
+  },
+  {
+   "site": "corz-pecos",
+   "tenant": "AMD",
+   "mw": 185,
+   "ann": 326,
+   "first": "2027Q1",
+   "full": "2027Q2",
+   "value": 4890,
+   "term": 15,
+   "src": "CORZ Q2 FY26 deck; AMD program >$14B"
+  },
+  {
+   "site": "corz-musk",
+   "tenant": "AMD",
+   "mw": 82,
+   "ann": 144,
+   "first": "2027Q3",
+   "full": "2027Q4",
+   "value": 2165,
+   "term": 15,
+   "src": "CORZ Q2 FY26 deck"
+  },
+  {
+   "site": "corz-hunt",
+   "tenant": "AMD",
+   "mw": 110,
+   "ann": 194,
+   "first": "2028Q1",
+   "full": "2028Q2",
+   "value": 2905,
+   "term": 15,
+   "src": "CORZ Q2 FY26 deck"
+  },
+  {
+   "site": "corz-dalton",
+   "tenant": "Neocloud (AMD-backed)",
+   "mw": 120,
+   "ann": 211,
+   "first": "2027Q3",
+   "full": "2027Q4",
+   "value": 3170,
+   "term": 15,
+   "src": "CORZ Q2 FY26 deck"
+  },
+  {
+   "site": "corz-auburn",
+   "tenant": "Neocloud (AMD-backed)",
+   "mw": 32,
+   "ann": 56,
+   "first": "2027Q1",
+   "full": "2027Q2",
+   "value": 845,
+   "term": 15,
+   "src": "CORZ Q2 FY26 deck"
+  },
+  {
+   "site": "wulf-lm",
+   "tenant": "Core42",
+   "mw": 60,
+   "ann": 108,
+   "est": true,
+   "first": "2025Q3",
+   "full": "2025Q4",
+   "term": 10,
+   "src": "WULF 10-Q: all Core42 leases commenced"
+  },
+  {
+   "site": "wulf-lm",
+   "tenant": "Fluidstack (Google)",
+   "mw": 380,
+   "ann": 684,
+   "est": true,
+   "first": "2026Q1",
+   "full": "2027Q1",
+   "term": 10,
+   "src": "WULF 10-Q / Q2 call: CB-4 rent late Sep 2026, CB-5 Jan 2027"
+  },
+  {
+   "site": "wulf-ky",
+   "tenant": "Anthropic",
+   "mw": 401,
+   "ann": 950,
+   "first": "2027Q3",
+   "full": "2028Q1",
+   "value": 19000,
+   "term": 20,
+   "src": "WULF: $19B / 20-yr"
+  },
+  {
+   "site": "apld-pf1",
+   "tenant": "CoreWeave",
+   "mw": 400,
+   "ann": 733,
+   "first": "2025Q4",
+   "full": "2027Q2",
+   "value": 11000,
+   "term": 15,
+   "src": "APLD: ~$11B CoreWeave, 400 MW"
+  },
+  {
+   "site": "apld-pf1",
+   "tenant": "CoreWeave",
+   "mw": 150,
+   "ann": 270,
+   "est": true,
+   "first": "2027Q4",
+   "full": "2028Q1",
+   "term": 15,
+   "src": "APLD FY26 Q4: Bldg 4, 150 MW"
+  },
+  {
+   "site": "apld-pf2",
+   "tenant": "IG hyperscaler (unnamed)",
+   "mw": 200,
+   "ann": 333,
+   "first": "2026Q4",
+   "full": "2027Q4",
+   "value": 5000,
+   "term": 15,
+   "src": "APLD: $5B / 15-yr"
+  },
+  {
+   "site": "apld-pf3",
+   "tenant": "IG hyperscaler (unnamed)",
+   "mw": 300,
+   "ann": 500,
+   "first": "2027Q3",
+   "full": "2028Q2",
+   "value": 7500,
+   "term": 15,
+   "src": "APLD: $7.5B / 15-yr, ops Aug 2027"
+  },
+  {
+   "site": "apld-df1",
+   "tenant": "IG hyperscaler (unnamed)",
+   "mw": 300,
+   "ann": 500,
+   "first": "2027Q3",
+   "full": "2028Q2",
+   "value": 7500,
+   "term": 15,
+   "src": "APLD: $7.5B / 15-yr, ops 2027"
+  },
+  {
+   "site": "hut-rb",
+   "tenant": "Fluidstack / Anthropic (Google)",
+   "mw": 245,
+   "ann": 467,
+   "first": "2027Q2",
+   "full": "2027Q4",
+   "value": 7000,
+   "term": 15,
+   "src": "HUT: $7B / 15-yr; first hall Q2 2027"
+  },
+  {
+   "site": "hut-bp",
+   "tenant": "AA- tenant (unnamed)",
+   "mw": 352,
+   "ann": 653,
+   "first": "2027Q3",
+   "full": "2028Q1",
+   "value": 9800,
+   "term": 15,
+   "src": "HUT Q2 8-K: first hall Q3 2027"
+  },
+  {
+   "site": "hut-bp",
+   "tenant": "AA- tenant (unnamed)",
+   "mw": 352,
+   "ann": 653,
+   "first": "2028Q2",
+   "full": "2028Q4",
+   "value": 9800,
+   "term": 15,
+   "src": "HUT Q2 8-K: Phase 2 Q2 2028"
+  },
+  {
+   "site": "cifr-bl",
+   "tenant": "Fluidstack (Google)",
+   "mw": 300,
+   "ann": 540,
+   "est": true,
+   "first": "2026Q3",
+   "full": "2027Q2",
+   "term": 10,
+   "src": "CIFR 10-Q: commencement Sep 2026"
+  },
+  {
+   "site": "cifr-bp",
+   "tenant": "AWS",
+   "mw": 300,
+   "ann": 367,
+   "first": "2026Q3",
+   "full": "2027Q2",
+   "value": 5500,
+   "term": 15,
+   "src": "CIFR: $5.5B / 15-yr; rent from Aug 2026"
+  },
+  {
+   "site": "clsk-sv",
+   "tenant": "High-IG tech (reported Meta)",
+   "mw": 175,
+   "ann": 330,
+   "first": "2027Q4",
+   "full": "2028Q4",
+   "value": 6600,
+   "term": 20,
+   "src": "CLSK: $6.6B / 20-yr; deliveries from Q4 2027"
+  },
+  {
+   "site": "riot-rock",
+   "tenant": "Anthropic (reported)",
+   "mw": 191,
+   "ann": 455,
+   "first": "2027Q4",
+   "full": "2028Q2",
+   "value": 9100,
+   "term": 20,
+   "src": "RIOT 8-K: 96 MW Dec 2027, 191 MW Jun 2028"
+  },
+  {
+   "site": "riot-rock",
+   "tenant": "AMD",
+   "mw": 50,
+   "ann": 70,
+   "first": "2026Q1",
+   "full": "2026Q4",
+   "value": 700,
+   "term": 10,
+   "src": "RIOT: 241 MW ≈ $9.8B total"
+  },
+  {
+   "site": "glxy-hel",
+   "tenant": "CoreWeave",
+   "mw": 133,
+   "ann": 253,
+   "first": "2026Q2",
+   "full": "2026Q2",
+   "term": 15,
+   "src": "GLXY: >$1B/yr for 526 MW"
+  },
+  {
+   "site": "glxy-hel",
+   "tenant": "CoreWeave",
+   "mw": 260,
+   "ann": 494,
+   "first": "2027Q1",
+   "full": "2027Q2",
+   "term": 15,
+   "src": "GLXY: Ph. II 1H27"
+  },
+  {
+   "site": "glxy-hel",
+   "tenant": "CoreWeave",
+   "mw": 133,
+   "ann": 253,
+   "est": true,
+   "first": "2028Q1",
+   "full": "2028Q2",
+   "term": 15,
+   "src": "GLXY: Ph. III timing not given"
+  },
+  {
+   "site": "crwv-rva",
+   "tenant": "CoreWeave",
+   "mw": 76,
+   "ann": 196,
+   "first": "2027Q3",
+   "full": "2028Q2",
+   "value": 2940,
+   "term": 15,
+   "src": "Bond marketing: $2.94B / 15-yr, ops 2027-28"
+  },
+  {
+   "site": "crwv-elk",
+   "tenant": "CoreWeave",
+   "mw": 100,
+   "ann": 180,
+   "est": true,
+   "first": "2027Q2",
+   "full": "2027Q4",
+   "term": 15,
+   "src": "HY bond marketing (terms not public)"
+  },
+  {
+   "site": "orcl-abi",
+   "tenant": "Oracle",
+   "mw": 1200,
+   "ann": 2160,
+   "est": true,
+   "first": "2025Q3",
+   "full": "2026Q3",
+   "term": 15,
+   "src": "Est.; operating"
+  },
+  {
+   "site": "orcl-fro",
+   "tenant": "Oracle",
+   "mw": 1400,
+   "ann": 2520,
+   "est": true,
+   "first": "2027Q1",
+   "full": "2027Q4",
+   "term": 17,
+   "src": "Est."
+  },
+  {
+   "site": "orcl-mi",
+   "tenant": "Oracle",
+   "mw": 1400,
+   "ann": 2520,
+   "est": true,
+   "first": "2027Q3",
+   "full": "2028Q3",
+   "term": 17,
+   "src": "Est."
+  },
+  {
+   "site": "orcl-pw",
+   "tenant": "Oracle",
+   "mw": 1000,
+   "ann": 1800,
+   "est": true,
+   "first": "2027Q4",
+   "full": "2028Q4",
+   "term": 17,
+   "src": "Est."
+  },
+  {
+   "site": "orcl-nm",
+   "tenant": "Oracle",
+   "mw": 2450,
+   "ann": 4410,
+   "est": true,
+   "first": "2028Q2",
+   "full": "2028Q4",
+   "term": 17,
+   "fm": true,
+   "src": "Est.; 2028 target. FM allows up to 3-yr deferral of full rent."
+  },
+  {
+   "site": "meta-hyp",
+   "tenant": "Meta",
+   "mw": 2000,
+   "ann": 3600,
+   "est": true,
+   "first": "2028Q1",
+   "full": "2029Q2",
+   "term": 16,
+   "src": "Est.; RVG covers 16 yrs"
+  },
+  {
+   "site": "meta-elp",
+   "tenant": "Meta",
+   "mw": 1000,
+   "ann": 1800,
+   "est": true,
+   "first": "2028Q1",
+   "full": "2029Q1",
+   "term": 16,
+   "src": "Est.; completion pushed to Feb 2029"
+  }
+ ],
+ "bonds": [
+  {
+   "iss": "CRWV",
+   "inst": "9.250% Sr Notes due Jun 1, 2030",
+   "size": 2000,
+   "kind": "Corp unsecured",
+   "exp": [
+    "corz-denton",
+    "corz-dalton",
+    "corz-musk",
+    "corz-marble",
+    "corz-austin",
+    "apld-pf1",
+    "crwv-lan",
+    "crwv-ken",
+    "crwv-elk",
+    "crwv-rva",
+    "glxy-hel"
+   ],
+   "ver": "SEC 8-K",
+   "d": "May 2025",
+   "corp": true
+  },
+  {
+   "iss": "CRWV",
+   "inst": "9.000% Sr Notes due Feb 1, 2031",
+   "size": 1750,
+   "kind": "Corp unsecured",
+   "exp": [
+    "corz-denton",
+    "corz-dalton",
+    "corz-musk",
+    "corz-marble",
+    "corz-austin",
+    "apld-pf1",
+    "crwv-lan",
+    "crwv-ken",
+    "crwv-elk",
+    "crwv-rva",
+    "glxy-hel"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Jul 2025",
+   "corp": true
+  },
+  {
+   "iss": "CRWV",
+   "inst": "9.750% Sr Notes due Oct 1, 2031",
+   "size": 1750,
+   "kind": "Corp unsecured",
+   "exp": [
+    "corz-denton",
+    "corz-dalton",
+    "corz-musk",
+    "corz-marble",
+    "corz-austin",
+    "apld-pf1",
+    "crwv-lan",
+    "crwv-ken",
+    "crwv-elk",
+    "crwv-rva",
+    "glxy-hel"
+   ],
+   "ver": "SEC 10-Q",
+   "d": "Apr 2026",
+   "corp": true
+  },
+  {
+   "iss": "CRWV",
+   "inst": "9.625% Sr Notes due Jul 15, 2032",
+   "size": 1250,
+   "kind": "Corp unsecured",
+   "exp": [
+    "corz-denton",
+    "corz-dalton",
+    "corz-musk",
+    "corz-marble",
+    "corz-austin",
+    "apld-pf1",
+    "crwv-lan",
+    "crwv-ken",
+    "crwv-elk",
+    "crwv-rva",
+    "glxy-hel"
+   ],
+   "ver": "Issuer release",
+   "d": "Jun 2026",
+   "corp": true
+  },
+  {
+   "iss": "CRWV",
+   "inst": "8.500% Sr Notes due Jul 15, 2032 (€2.0B)",
+   "size": 2300,
+   "kind": "Corp unsecured",
+   "exp": [
+    "corz-denton",
+    "corz-dalton",
+    "corz-musk",
+    "corz-marble",
+    "corz-austin",
+    "apld-pf1",
+    "crwv-lan",
+    "crwv-ken",
+    "crwv-elk",
+    "crwv-rva",
+    "glxy-hel"
+   ],
+   "ver": "Issuer release",
+   "d": "Jun 2026; USD approx.",
+   "corp": true
+  },
+  {
+   "iss": "CRWV",
+   "inst": "1.75% Conv due Dec 1, 2031",
+   "size": 2250,
+   "kind": "Convertible",
+   "exp": [
+    "corz-denton",
+    "corz-dalton",
+    "corz-musk",
+    "corz-marble",
+    "corz-austin",
+    "apld-pf1",
+    "crwv-lan",
+    "crwv-ken",
+    "crwv-elk",
+    "crwv-rva",
+    "glxy-hel"
+   ],
+   "ver": "Issuer release",
+   "d": "Dec 2025",
+   "corp": true
+  },
+  {
+   "iss": "CRWV",
+   "inst": "1.75% Conv due Oct 1, 2032",
+   "size": 4000,
+   "kind": "Convertible",
+   "exp": [
+    "corz-denton",
+    "corz-dalton",
+    "corz-musk",
+    "corz-marble",
+    "corz-austin",
+    "apld-pf1",
+    "crwv-lan",
+    "crwv-ken",
+    "crwv-elk",
+    "crwv-rva",
+    "glxy-hel"
+   ],
+   "ver": "SEC 10-Q",
+   "d": "Apr 2026",
+   "corp": true
+  },
+  {
+   "iss": "CRWV",
+   "inst": "2.875% Conv due Apr 1, 2033",
+   "size": 3700,
+   "kind": "Convertible",
+   "exp": [
+    "corz-denton",
+    "corz-dalton",
+    "corz-musk",
+    "corz-marble",
+    "corz-austin",
+    "apld-pf1",
+    "crwv-lan",
+    "crwv-ken",
+    "crwv-elk",
+    "crwv-rva",
+    "glxy-hel"
+   ],
+   "ver": "Issuer release",
+   "d": "Sep 2026",
+   "corp": true
+  },
+  {
+   "iss": "CRWV",
+   "inst": "Digital Drive VA project HY (~9.25% talk)",
+   "size": 1100,
+   "kind": "Secured project",
+   "exp": [
+    "crwv-rva"
+   ],
+   "ver": "Press only (144A / private)",
+   "d": "Sep 2026"
+  },
+  {
+   "iss": "CRWV",
+   "inst": "Elk Grove Village IL project HY",
+   "size": 850,
+   "kind": "Secured project",
+   "exp": [
+    "crwv-elk"
+   ],
+   "ver": "Press only (144A / private)",
+   "d": "Marketed Jun 2026; final terms not public"
+  },
+  {
+   "iss": "ORCL",
+   "inst": "$25B Sr Notes: FRN '29, 4.55% '29, 4.95% '31, 5.35% '33, 5.70% '36, 6.55% '46, 6.70% '56, 6.85% '66",
+   "size": 25000,
+   "kind": "Corp unsecured",
+   "exp": [
+    "orcl-abi",
+    "orcl-fro",
+    "orcl-pw",
+    "orcl-mi",
+    "orcl-nm"
+   ],
+   "ver": "SEC FWP",
+   "d": "Feb 2, 2026. S&P cut to BBB- Jul 9",
+   "corp": true
+  },
+  {
+   "iss": "ORCL",
+   "inst": "Project Jupiter construction loan (~20 banks), quoted ~89-91",
+   "size": 18000,
+   "kind": "Loan",
+   "exp": [
+    "orcl-nm"
+   ],
+   "ver": "Press only (144A / private)",
+   "d": "FM notice Sep 24, 2026",
+   "flag": "FM"
+  },
+  {
+   "iss": "ORCL",
+   "inst": "Related Digital Saline 7.5% project bonds (~19.5 yr)",
+   "size": 14000,
+   "kind": "Secured project",
+   "exp": [
+    "orcl-mi"
+   ],
+   "ver": "Press only (144A / private)",
+   "d": "Apr 2026; PIMCO ~$10B"
+  },
+  {
+   "iss": "ORCL",
+   "inst": "Vantage Frontier + Port Washington loans (S+~250)",
+   "size": 38000,
+   "kind": "Loan",
+   "exp": [
+    "orcl-fro",
+    "orcl-pw"
+   ],
+   "ver": "Press only (144A / private)",
+   "d": "JPM / MUFG"
+  },
+  {
+   "iss": "CORZ",
+   "inst": "7.750% Sr Secured Notes 2031 (Core Scientific Finance I)",
+   "size": 3300,
+   "kind": "Secured project",
+   "exp": [
+    "corz-denton",
+    "corz-dalton",
+    "corz-musk",
+    "corz-marble",
+    "corz-austin"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Apr 2026; CoreWeave lockbox"
+  },
+  {
+   "iss": "WULF",
+   "inst": "7.750% Sr Secured Notes 2030 (WULF Compute, Lake Mariner)",
+   "size": 3200,
+   "kind": "Secured project",
+   "exp": [
+    "wulf-lm"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Oct 2025; Google warrant pledge"
+  },
+  {
+   "iss": "WULF",
+   "inst": "Raylan Data $500M 364-day bridge (Hawesville), S+275",
+   "size": 500,
+   "kind": "Loan",
+   "exp": [
+    "wulf-ky"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Mar 13, 2026; matures ~Mar 2027",
+   "flag": "BRIDGE"
+  },
+  {
+   "iss": "WULF",
+   "inst": "Hawesville $3.5B HY bonds + loans (takeout, not closed)",
+   "size": 3500,
+   "kind": "Secured project",
+   "exp": [
+    "wulf-ky"
+   ],
+   "ver": "Press only (144A / private)",
+   "d": "Launched Jul 2026"
+  },
+  {
+   "iss": "WULF",
+   "inst": "Convertible notes (all series; $1.10B current)",
+   "size": 2103,
+   "kind": "Convertible",
+   "exp": [
+    "wulf-lm",
+    "wulf-cay",
+    "wulf-abe",
+    "wulf-ky"
+   ],
+   "ver": "SEC 10-Q",
+   "d": "Jun 30, 2026 balance",
+   "corp": true
+  },
+  {
+   "iss": "WULF",
+   "inst": "Abernathy JV Sr Secured Notes (leave with JV sale)",
+   "size": 1300,
+   "kind": "Secured project",
+   "exp": [
+    "wulf-abe"
+   ],
+   "ver": "Issuer release",
+   "d": "Dec 2025"
+  },
+  {
+   "iss": "APLD",
+   "inst": "9.250% Sr Secured Notes 2030 (APLD ComputeCo), issued at 97",
+   "size": 2350,
+   "kind": "Secured project",
+   "exp": [
+    "apld-pf1"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Nov 2025; ELN-02/03"
+  },
+  {
+   "iss": "APLD",
+   "inst": "6.750% Sr Secured Notes 2031 (ComputeCo 2)",
+   "size": 2150,
+   "kind": "Secured project",
+   "exp": [
+    "apld-pf2"
+   ],
+   "ver": "Issuer release",
+   "d": "Mar 2026"
+  },
+  {
+   "iss": "APLD",
+   "inst": "7.000% Sr Secured Notes 2031 (ComputeCo 3)",
+   "size": 1590,
+   "kind": "Secured project",
+   "exp": [
+    "apld-pf1"
+   ],
+   "ver": "Issuer release",
+   "d": "Jun 2026; Bldg 4"
+  },
+  {
+   "iss": "HUT",
+   "inst": "6.192% Sr Secured Notes 2042 (River Bend), BBB-",
+   "size": 3250,
+   "kind": "Secured project",
+   "exp": [
+    "hut-rb"
+   ],
+   "ver": "Issuer release",
+   "d": "Apr 2026"
+  },
+  {
+   "iss": "HUT",
+   "inst": "6.129% Sr Secured Notes due Nov 30, 2042 (Beacon Point), Baa2",
+   "size": 4250,
+   "kind": "Secured project",
+   "exp": [
+    "hut-bp"
+   ],
+   "ver": "Issuer release",
+   "d": "Jun 2026"
+  },
+  {
+   "iss": "CIFR",
+   "inst": "7.125% Sr Secured Notes 2030 (Cipher Compute, Barber Lake) + $333M add-on",
+   "size": 1733,
+   "kind": "Secured project",
+   "exp": [
+    "cifr-bl"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Nov 2025"
+  },
+  {
+   "iss": "CIFR",
+   "inst": "6.125% Sr Secured Notes 2031 (Black Pearl Compute)",
+   "size": 2000,
+   "kind": "Secured project",
+   "exp": [
+    "cifr-bp"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Feb 2026"
+  },
+  {
+   "iss": "CIFR",
+   "inst": "6.000% Sr Secured Notes 2031 (Stingray Compute), issued at 99.75",
+   "size": 810,
+   "kind": "Secured project",
+   "exp": [
+    "cifr-sr"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Jun 2026"
+  },
+  {
+   "iss": "CIFR",
+   "inst": "0.00% Conv due 2031",
+   "size": 1300,
+   "kind": "Convertible",
+   "exp": [
+    "cifr-bl",
+    "cifr-bp",
+    "cifr-sr"
+   ],
+   "ver": "SEC 10-Q",
+   "d": "Sep 2025",
+   "corp": true
+  },
+  {
+   "iss": "CIFR",
+   "inst": "1.75% Conv due 2030",
+   "size": 172.5,
+   "kind": "Convertible",
+   "exp": [
+    "cifr-bl",
+    "cifr-bp",
+    "cifr-sr"
+   ],
+   "ver": "SEC 10-Q",
+   "d": "May 2025",
+   "corp": true
+  },
+  {
+   "iss": "CIFR",
+   "inst": "0.00% Conv due Nov 1, 2032 (announced today)",
+   "size": 850,
+   "kind": "Convertible",
+   "exp": [
+    "cifr-bl",
+    "cifr-bp",
+    "cifr-sr"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Oct 13, 2026; funds Barber Lake equity",
+   "corp": true
+  },
+  {
+   "iss": "KEEL",
+   "inst": "1.250% Conv Sr Notes due Jan 15, 2032",
+   "size": 400,
+   "kind": "Convertible",
+   "exp": [
+    "keel-pc",
+    "keel-sh",
+    "keel-ml"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Jun 2026",
+   "corp": true
+  },
+  {
+   "iss": "CLSK",
+   "inst": "0% Conv Sr Notes 2032",
+   "size": 1150,
+   "kind": "Convertible",
+   "exp": [
+    "clsk-sv",
+    "clsk-tx"
+   ],
+   "ver": "Press only (144A / private)",
+   "d": "Nov 2025; total LTD $1.78B per 10-Q",
+   "corp": true
+  },
+  {
+   "iss": "NBIS",
+   "inst": "0.50% Conv due Feb 15, 2030 (accretes to 110%)",
+   "size": 3000,
+   "kind": "Convertible",
+   "exp": [
+    "nbis-vin",
+    "nbis-ind",
+    "nbis-pa"
+   ],
+   "ver": "Issuer release",
+   "d": "Aug 2026",
+   "corp": true
+  },
+  {
+   "iss": "NBIS",
+   "inst": "4.50% Conv due Feb 15, 2034 (accretes to 125%)",
+   "size": 2000,
+   "kind": "Convertible",
+   "exp": [
+    "nbis-vin",
+    "nbis-ind",
+    "nbis-pa"
+   ],
+   "ver": "Issuer release",
+   "d": "Aug 2026",
+   "corp": true
+  },
+  {
+   "iss": "NBIS",
+   "inst": "1.250% Conv due 2031",
+   "size": 2588,
+   "kind": "Convertible",
+   "exp": [
+    "nbis-vin",
+    "nbis-ind",
+    "nbis-pa"
+   ],
+   "ver": "SEC 6-K",
+   "d": "Mar 2026",
+   "corp": true
+  },
+  {
+   "iss": "NBIS",
+   "inst": "2.625% Conv due 2033",
+   "size": 1750,
+   "kind": "Convertible",
+   "exp": [
+    "nbis-vin",
+    "nbis-ind",
+    "nbis-pa"
+   ],
+   "ver": "SEC 6-K",
+   "d": "Mar 2026",
+   "corp": true
+  },
+  {
+   "iss": "NSCALE",
+   "inst": "Ward County DDTL (IG-rated)",
+   "size": 1850,
+   "kind": "Loan",
+   "exp": [
+    "nscale-ward"
+   ],
+   "ver": "Issuer release",
+   "d": "Sep 2026"
+  },
+  {
+   "iss": "NSCALE",
+   "inst": "Madison NC DDTL (IG-rated)",
+   "size": 1200,
+   "kind": "Loan",
+   "exp": [
+    "nscale-nc"
+   ],
+   "ver": "Issuer release",
+   "d": "Sep 2026"
+  },
+  {
+   "iss": "IREN",
+   "inst": "1.00% Conv Notes 2033",
+   "size": 3000,
+   "kind": "Convertible",
+   "exp": [
+    "iren-ch",
+    "iren-sw"
+   ],
+   "ver": "SEC 8-K",
+   "d": "May 2026",
+   "corp": true
+  },
+  {
+   "iss": "IREN",
+   "inst": "3.50% Conv Notes 2029 (+ other series)",
+   "size": null,
+   "kind": "Convertible",
+   "exp": [
+    "iren-ch",
+    "iren-sw"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Referenced in May 2026 8-K",
+   "corp": true
+  },
+  {
+   "iss": "RIOT",
+   "inst": "Morgan Stanley $573M DDTL bridge, S+275, matures Dec 31, 2026",
+   "size": 573,
+   "kind": "Loan",
+   "exp": [
+    "riot-rock"
+   ],
+   "ver": "SEC 8-K",
+   "d": "Aug 2026",
+   "flag": "BRIDGE"
+  },
+  {
+   "iss": "GLXY",
+   "inst": "9.875% Sr Secured Notes due Aug 1, 2031 (Galaxy Helios DC II)",
+   "size": 3507,
+   "kind": "Secured project",
+   "exp": [
+    "glxy-hel"
+   ],
+   "ver": "Issuer release",
+   "d": "Jul 2026"
+  },
+  {
+   "iss": "META",
+   "inst": "Beignet Investor 6.58% 2049 (Hyperion), A+",
+   "size": 27300,
+   "kind": "Secured project",
+   "exp": [
+    "meta-hyp"
+   ],
+   "ver": "Press only (144A / private)",
+   "d": "Oct 2025; 144A-for-life, not on EDGAR"
+  },
+  {
+   "iss": "META",
+   "inst": "Sopaipilla Investor (El Paso), A+ prelim",
+   "size": 12300,
+   "kind": "Secured project",
+   "exp": [
+    "meta-elp"
+   ],
+   "ver": "Press only (144A / private)",
+   "d": "Jul 2026; coupon not public"
+  }
+ ],
+ "flags": [
+  {
+   "sev": "crit",
+   "title": "Oracle force majeure: Project Jupiter (NM)",
+   "who": "ORCL · STACK/Blue Owl · ~$18B construction loan",
+   "date": "Sep 24, 2026",
+   "site": "orcl-nm",
+   "body": "Oracle sent a force majeure notice to the developer. If the power delay qualifies, Oracle can defer full rent for up to 3 years past the 2028 target, paying only development-stage rent and part of interest in the meantime. Cause: the Green Chile gas pipeline slipped to Feb 1, 2027 after two State Land Office right-of-way denials, and the fuel-cell air permit is stalled after the NM Supreme Court paused proceedings. The construction loan was quoted at ~89-91. Not an event of default."
+  },
+  {
+   "sev": "high",
+   "title": "Same fact pattern: Vantage Frontier (TX)",
+   "who": "ORCL · Vantage · $38B loan package",
+   "date": "Since Sep 21, 2026",
+   "site": "orcl-fro",
+   "body": "Frontier also runs on behind-the-meter gas. Texas's TCEQ permit pause blocks new air permits until the ERCOT audit ends (~mid-Dec). A Jupiter-style force majeure notice would be the obvious next step if the microgrid slips."
+  },
+  {
+   "sev": "high",
+   "title": "Port Washington collateral fight (WI)",
+   "who": "ORCL · Vantage · We Energies",
+   "date": "Pending",
+   "site": "orcl-pw",
+   "body": "Wisconsin PSC ruling could force Oracle to post $7B+ of collateral for dedicated plant and lines. Oracle sued and offered ~$700M. Oracle was cut to BBB- on Jul 9, the level that triggers stricter collateral rules."
+  },
+  {
+   "sev": "high",
+   "title": "Riot bridge matures before rent",
+   "who": "RIOT · Morgan Stanley $573M",
+   "date": "Matures Dec 31, 2026",
+   "site": "riot-rock",
+   "body": "Interim facility matures about a year before the first 96 MW starts paying rent (Dec 2027). The investment-grade credit backstop for the $1.7-2.1B takeout is not finalized."
+  },
+  {
+   "sev": "high",
+   "title": "TeraWulf Hawesville bridge and takeout",
+   "who": "WULF · Raylan Data $500M 364-day",
+   "date": "Bridge ~Mar 2027",
+   "site": "wulf-ky",
+   "body": "$3.5B HY/loan takeout launched Jul 2026, not closed. Power is now contracted (KY PSC approved a 482 MW Big Rivers/Kenergy contract Aug 21), but the bridge matures before first rent in 2H27 and Kentucky's Aug 6 executive order puts all cost on the operator."
+  },
+  {
+   "sev": "med",
+   "title": "Backstops start only at rent commencement",
+   "who": "CIFR · WULF · HUT (Google / Fluidstack)",
+   "date": "Ongoing",
+   "site": "cifr-bl",
+   "body": "Cipher's 10-Q says tenant guarantees and backstops take effect only after rent commencement and are capped or limited by default triggers. Until a hall commences, a delivery delay sits with the landlord and its bondholders, not Google."
+  },
+  {
+   "sev": "med",
+   "title": "CleanSpark: milestone-based abatement or termination",
+   "who": "CLSK · Sandersville",
+   "date": "Deliveries from Q4 2027",
+   "site": "clsk-sv",
+   "body": "Missed milestones can trigger rent abatement or lease termination. The site has run as a mining campus since 2022, but the added AI load and utility are not disclosed, and Georgia's governor race and two PSC seats are toss-ups."
+  },
+  {
+   "sev": "med",
+   "title": "CoreWeave: $35.5B of leases not yet commenced",
+   "who": "CRWV",
+   "date": "Commence 2026-2029",
+   "site": "glxy-hel",
+   "body": "Per the Q2 10-Q, 748 MW across sites was undelivered at Jun 30, phasing through 2028. Applied Digital's Bldg 4 lease moves to a CoreWeave subsidiary only once that subsidiary is investment grade."
+  },
+  {
+   "sev": "med",
+   "title": "Oracle: $288B of leases not yet commenced",
+   "who": "ORCL",
+   "date": "FQ2'27 to FY29",
+   "site": "orcl-abi",
+   "body": "Per the Aug 31, 2026 10-Q, substantially all data center leases with 15-19 year terms, not on the balance sheet. A Jupiter-style deferral right across these leases would shift timing risk to landlords and lenders."
+  }
+ ],
+ "capex": {
+  "wulf-lm": {
+   "perMW": 9.1,
+   "remaining": 1700,
+   "by": "2027Q1",
+   "src": "WULF Q2 call: ~$1.7B remaining"
+  },
+  "riot-rock": {
+   "perMW": 11.5,
+   "src": "RIOT: $2.1-2.3B for 191 MW"
+  },
+  "clsk-sv": {
+   "perMW": 11,
+   "src": "CLSK: $10-12M/MW"
+  },
+  "wulf-ky": {
+   "perMW": 10,
+   "src": "WULF: ~$4B total"
+  }
+ },
+ "sources": [
+  [
+   "BofA via BigGo: 20 of 36 governor races see moratorium proposals",
+   "https://finance.biggo.com/news/e0e7b385-5b91-4f35-8296-2039a4c1987f"
+  ],
+  [
+   "RealClearPolling: latest governor polls",
+   "https://www.realclearpolling.com/latest-polls/governor"
+  ],
+  [
+   "Wikipedia: 2026 gubernatorial elections (nominees, ratings)",
+   "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections"
+  ],
+  [
+   "USPollingData: Georgia governor polls",
+   "https://uspollingdata.com/races/governor/georgia/"
+  ],
+  [
+   "UMass Lowell Texas poll (Oct 9)",
+   "https://www.uml.edu/news/press-releases/2026/10092026-texas-poll.aspx"
+  ],
+  [
+   "UT Texas Politics Project poll (Aug)",
+   "https://texaspolitics.utexas.edu/blog/new-ut-texas-politics-project-poll-finds-talarico-leading-paxton-abbott-leading-hinojosa-continued-resistance-to-data-centers-2"
+  ],
+  [
+   "ElectricChoice: state moratorium tracker",
+   "https://www.electricchoice.com/datacenters/moratoriums/"
+  ],
+  [
+   "Akin: Texas pauses data center interconnections",
+   "https://www.akingump.com/en/insights/alerts/texas-pauses-data-center-interconnections-pending-statewide-audit"
+  ],
+  [
+   "Bracewell: Abbott orders TCEQ permit pause",
+   "https://www.bracewell.com/resources/governor-abbott-orders-tceq-to-pause-all-permit-issuance-for-data-center-projects/"
+  ],
+  [
+   "Political.org: data center backlash in 2026 races",
+   "https://political.org/2026/08/21/rising-data-center-backlash-reshapes-2026-midterm-races-across-the-country/"
+  ],
+  [
+   "WCMU: Michigan governor's race hits Saline Township",
+   "https://www.wcmu.org/local-regional-news/2026-10-02/governors-race-hits-saline-township-site-of-massive-data-center-project"
+  ],
+  [
+   "Fox6: Wisconsin candidates on data centers",
+   "https://fox6now.com/news/wisconsin-governor-race-candidates-agree-data-center-guardrails"
+  ],
+  [
+   "Capacity: Oracle's $7B Wisconsin collateral fight",
+   "https://capacityglobal.com/news/oracles-7bn-wisconsin-bill-is-a-warning-shot-for-data-centre-cfos/"
+  ],
+  [
+   "Crowdfund Insider: NY moratorium and TeraWulf",
+   "https://www.crowdfundinsider.com/2026/07/291759-terawulf-shares-tumble-following-new-yorks-statewide-pause-on-large-data-center-permits/"
+  ],
+  [
+   "CoreWeave 2.875% 2033 converts (lists outstanding notes)",
+   "https://www.nasdaq.com/press-release/coreweave-prices-upsized-37-billion-convertible-senior-notes-offering-2026-09-18"
+  ],
+  [
+   "CoreWeave 1.75% 2032 converts and 9.75% 2031 notes",
+   "https://www.investing.com/news/sec-filings/coreweave-completes-4-billion-convertible-notes-and-175-million-senior-notes-offerings-93CH-4613795"
+  ],
+  [
+   "Briefs: Digital Drive (CoreWeave) $1.1B HY bond",
+   "https://www.briefs.co/news/goldman-leads-sale-of-1-1-billion-junk-bond-for-coreweave-le/"
+  ],
+  [
+   "Crypto Briefing: Elk Grove $850M HY bond",
+   "https://cryptobriefing.com/elk-grove-coreweave-data-center-junk-bonds/"
+  ],
+  [
+   "Core Scientific Q2 FY26 deck (sites)",
+   "https://www.sec.gov/Archives/edgar/data/1839341/000183934126000013/q2fy26earningsdeck728am.htm"
+  ],
+  [
+   "Core Scientific 7.75% 2031 secured notes",
+   "https://www.01net.it/core-scientific-announces-pricing-of-3-3-billion-of-senior-secured-notes/"
+  ],
+  [
+   "TeraWulf Q4 2025 results (sites, debt)",
+   "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000026/a_wulfearningsrelease2026-.htm"
+  ],
+  [
+   "Blockspace: TeraWulf $3.5B Kentucky raise",
+   "https://blockspace.media/insight/terawulf-debt-raise-anthropic-kentucky/"
+  ],
+  [
+   "Applied Digital 6.75% 2031 notes (Polaris Forge 2)",
+   "https://www.globenewswire.com/news-release/2026/03/04/3249218/0/en/Applied-Digital-Announces-Pricing-of-2-15-Billion-of-Senior-Secured-Notes-to-fund-Polaris-Forge-2-Campus.html"
+  ],
+  [
+   "Applied Digital 7.00% 2031 notes (ELN-04)",
+   "https://www.foreignpolicyjournal.com/2026/06/18/applied-digital-nasdaq-apld-raises-1-59b-in-senior-secured-notes-to-power-150-mw-polaris-forge-1-expansion/"
+  ],
+  [
+   "DCD: Applied Digital and Cipher senior notes (Nov 2025)",
+   "https://www.datacenterdynamics.com/en/news/applied-digital-cipher-mining-cleanspark-look-to-raise-billions-of-dollars-in-senior-notes-for-ai-data-center-build-outs/"
+  ],
+  [
+   "Hut 8 River Bend 6.192% notes",
+   "https://www.theenergymag.com/news/2026-04-27/hut-fluidstack-ai-louisiana"
+  ],
+  [
+   "Hut 8 Beacon Point 6.129% notes",
+   "https://www.prnewswire.com/news-releases/hut-8-announces-pricing-of-4-25-billion-of-investment-grade-senior-secured-notes-for-beacon-point-data-center-project-302792238.html"
+  ],
+  [
+   "Hut 8 Beacon Point lease and AEP Texas interconnection",
+   "https://theenergymag.com/news/market-news/hut-8-secures-9-8-billion-lease-to-fully-commercialize-texas-ai-campus"
+  ],
+  [
+   "Cipher FY2025 update (Barber Lake, Black Pearl notes)",
+   "https://www.stocktitan.net/news/CIFR/cipher-digital-provides-fourth-quarter-and-full-year-2025-business-w71erti1k94d.html"
+  ],
+  [
+   "DCD: Cipher Stingray $810M notes",
+   "https://www.datacenterdynamics.com/en/news/cipher-seeks-810m-in-senior-secured-notes-for-stingray-data-center-in-west-texas/"
+  ],
+  [
+   "Keel Infrastructure 1.25% 2032 converts",
+   "https://www.stocktitan.net/sec-filings/BITF/8-k-keel-infrastructure-corp-reports-material-event-dbff1b4e83ef.html"
+  ],
+  [
+   "CleanSpark Sandersville lease / Texas LOI",
+   "https://www.theenergymag.com/news/2026-07-14/cleanspark-ai-data-center-georgia"
+  ],
+  [
+   "Nebius $5.0B converts (Aug 2026)",
+   "https://nebius.com/newsroom/nebius-group-announces-pricing-of-upsized-private-offering-of-5-0-billion-of-convertible-senior-notes"
+  ],
+  [
+   "Nscale $3B DDTLs (Ward County, Madison NC)",
+   "https://www.nscale.com/press-releases/nscale-3-billion-delayed-draw-term-loans"
+  ],
+  [
+   "IREN $3.0B 1% 2033 converts",
+   "https://www.sec.gov/Archives/edgar/data/1878848/000114036126021285/ef20073507_ex99-1.htm"
+  ],
+  [
+   "IREN Sweetwater conditional ERCOT status",
+   "https://www.theenergymag.com/news/market-news/iren-2-gigawatt-sweetwater-base-load-ercot"
+  ],
+  [
+   "Riot $9.1B Rockdale lease 8-K",
+   "https://www.stocktitan.net/sec-filings/RIOT/8-k-riot-platforms-inc-reports-material-event-55bed99b80cf.html"
+  ],
+  [
+   "Galaxy Helios II $3.5B notes",
+   "https://theenergymag.com/news/market-news/galaxy-digital-senior-note-helios-ai-data-center"
+  ],
+  [
+   "DCD: $38B Oracle-linked Vantage loans",
+   "https://www.datacenterdynamics.com/en/news/jpmorgan-chase-and-mitsubishi-ufj-lead-38bn-debt-package-for-oracle-linked-data-centers-report/"
+  ],
+  [
+   "TNW: $16B Saline Township financing (7.5% bonds)",
+   "https://thenextweb.com/news/oracle-data-centre-16-billion-financing-stargate"
+  ],
+  [
+   "Oracle $25B bond, S&P cut to BBB-",
+   "https://startupmap.iamsterdam.com/news/note/oracle-taps-25b-bond-as-debt-hits-130b-and-rating-slips-to-junk-s-edge"
+  ],
+  [
+   "Global Data Center Hub: Meta El Paso (Sopaipilla) bond",
+   "https://www.globaldatacenterhub.com/p/blackrock-launches-123-billion-bond"
+  ],
+  [
+   "Global Data Center Hub: Meta Hyperion financing",
+   "https://www.globaldatacenterhub.com/p/meta-blue-owls-27b-bet-is-this-the"
+  ],
+  [
+   "Black Ridge Research: largest U.S. projects",
+   "https://www.blackridgeresearch.com/blog/upcoming-largest-data-center-projects-in-united-states-usa"
+  ],
+  [
+   "TechCrunch: Oracle force majeure notice on Project Jupiter",
+   "https://techcrunch.com/2026/09/24/oracle-sends-force-majeure-notice-on-its-new-mexico-stargate-data-center/"
+  ],
+  [
+   "Business Model Analyst: Jupiter FM mechanics, pipeline, permits",
+   "https://businessmodelanalyst.com/oracle-project-jupiter-force-majeure-power-risk/"
+  ],
+  [
+   "Bit.fan: Jupiter $18B loan below par",
+   "https://www.bit.fan/en/news/list/oracle-project-jupiter-force-majeure-debt-discount-4a125224-en-keyName-def34a01"
+  ],
+  [
+   "Clifford Chance: The Data Center Lease Is the Bond",
+   "https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/07/The%20Data%20Center%20Lease%20Is%20the%20Bond.pdf"
+  ],
+  [
+   "Oracle 10-Q (Aug 31, 2026): $288B leases not commenced",
+   "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm"
+  ],
+  [
+   "Oracle FWP: $25B notes, Feb 2026",
+   "https://www.sec.gov/Archives/edgar/data/1341439/000119312526033882/d44245dfwp.htm"
+  ],
+  [
+   "CoreWeave 8-K: 9.250% 2030 notes",
+   "https://www.sec.gov/Archives/edgar/data/1769628/000176962825000019/coreweave-pressreleasepric.htm"
+  ],
+  [
+   "CoreWeave 8-K: 9.000% 2031 notes",
+   "https://www.sec.gov/Archives/edgar/data/0001769628/000176962825000030/coreweave-pressreleasepric.htm"
+  ],
+  [
+   "CoreWeave: 9.625% 2032 and €8.500% 2032 notes",
+   "https://www.01net.it/coreweave-announces-pricing-of-1-25-billion-of-senior-notes-and-e2-billion-of-senior-notes/"
+  ],
+  [
+   "CoreWeave: 1.75% 2031 converts",
+   "https://www.nasdaq.com/press-release/coreweave-prices-upsized-225-billion-convertible-senior-notes-offering-2025-12-09"
+  ],
+  [
+   "CoreWeave Q2 2026 10-Q summary ($35.5B leases not commenced)",
+   "https://www.stocktitan.net/sec-filings/CRWV/10-q-core-weave-inc-quarterly-earnings-report-d3b596a1f167.html"
+  ],
+  [
+   "TeraWulf 8-K: 7.750% 2030 WULF Compute notes",
+   "https://www.sec.gov/Archives/edgar/data/1083301/000110465925100142/tm2528904d1_ex99-1.htm"
+  ],
+  [
+   "TeraWulf 8-K: Raylan Data $500M bridge",
+   "https://www.sec.gov/Archives/edgar/data/1083301/000095014226000720/eh260751501_8k.htm"
+  ],
+  [
+   "TeraWulf 10-Q Jun 30, 2026",
+   "https://www.sec.gov/Archives/edgar/data/0001083301/000108330126000166/wulf-20260630.htm"
+  ],
+  [
+   "TeraWulf Q2 call (Lake Mariner schedule, Abernathy sale)",
+   "https://www.marketbeat.com/instant-alerts/terawulf-q2-earnings-call-highlights-2026-08-05/"
+  ],
+  [
+   "Applied Digital 8-K: 9.250% 2030 notes",
+   "https://www.sec.gov/Archives/edgar/data/1144879/000149315225022506/ex99-1.htm"
+  ],
+  [
+   "Applied Digital FY26 Q4 results (campuses, Delta Forge)",
+   "https://datacentremagazine.com/globenewswire/3333871"
+  ],
+  [
+   "Applied Digital PF2 $5B lease",
+   "https://www.benzinga.com/trading-ideas/movers/25/10/48354016/applied-digitals-polaris-forge-2-campus-secures-15-year-5-billion-contract"
+  ],
+  [
+   "Applied Digital PF3 $7.5B lease",
+   "https://ir.applieddigital.com/news-events/press-releases/detail/152/applied-digital-reaches-significant-milestone-surpassing-1"
+  ],
+  [
+   "Hut 8 Q2 2026 8-K (River Bend, Beacon Point schedule)",
+   "https://www.sec.gov/Archives/edgar/data/0001964789/000110465926090041/tm2621890d1_ex99-1.htm"
+  ],
+  [
+   "Cipher 8-K: 7.125% 2030 Barber Lake notes",
+   "https://www.sec.gov/Archives/edgar/data/1819989/000095010325014401/dp237015_ex9901.htm"
+  ],
+  [
+   "Cipher 8-K: 6.125% 2031 Black Pearl notes",
+   "https://www.sec.gov/Archives/edgar/data/1819989/000095010326001659/dp241116_ex9901.htm"
+  ],
+  [
+   "Cipher 8-K: 6.000% 2031 Stingray notes",
+   "https://www.sec.gov/Archives/edgar/data/0001819989/000095010326008678/dp248139_ex9901.htm"
+  ],
+  [
+   "Cipher 8-K: $850M 0% 2032 converts (Oct 13, 2026)",
+   "https://www.sec.gov/Archives/edgar/data/0001819989/000119312526419743/d134900dex992.htm"
+  ],
+  [
+   "Cipher 10-Q Jun 30, 2026 (converts, backstop limits)",
+   "https://www.sec.gov/Archives/edgar/data/0001819989/000181998926000041/cifr-20260630.htm"
+  ],
+  [
+   "Cipher Q2 2026 results (Black Pearl rent commenced)",
+   "https://www.sec.gov/Archives/edgar/data/0001819989/000181998926000038/q226_earningsxprxdraftxvf.htm"
+  ],
+  [
+   "Cipher $5.5B AWS lease",
+   "https://www.datacenterdynamics.com/en/news/aws-signs-300mw-hosting-deal-to-lease-capacity-from-cipher-mining/"
+  ],
+  [
+   "Core Scientific 8-K: $10.2B CoreWeave contracts",
+   "https://www.sec.gov/Archives/edgar/data/1839341/000162828025008312/ex991-coreweavepressrelease.htm"
+  ],
+  [
+   "Core Scientific AMD program (>$14B)",
+   "https://san-1510.aid.brainsum.com/news/top-news/core-scientifics-14bn-amd-deal-vindicates-its-rejection-coreweave"
+  ],
+  [
+   "Galaxy: 9.875% 2031 Helios II notes",
+   "https://galaxydigital.gcs-web.com/news-releases/news-release-details/galaxy-digital-inc-announces-pricing-3507-billion-senior-secured"
+  ],
+  [
+   "The Block: Helios Phase I delivered, phase schedule",
+   "https://www.theblock.co/post/407396/galaxy-delivers-133-mw-of-critical-it-load-to-coreweave-as-helios-bitcoin-mine-turns-ai-hub"
+  ],
+  [
+   "CryptoSlate: Riot bridge matures before rent",
+   "https://cryptoslate.com/riot-platforms-locked-in-a-9-1-billion-anthropic-deal-but-its-bridge-loan-expires-before-the-rent-starts/"
+  ],
+  [
+   "Blockspace: CleanSpark Sandersville 175 MW, Q4 2027",
+   "https://blockspace.media/insight/cleanspark-reports-loss-sandersville-funding/"
+  ],
+  [
+   "Nebius 6-K: Mar 2026 converts",
+   "https://www.sec.gov/Archives/edgar/data/1513845/000110465926032735/tm268409d4_ex99-1.htm"
+  ]
+ ]
+}

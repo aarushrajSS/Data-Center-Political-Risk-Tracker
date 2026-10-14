@@ -1,0 +1,464 @@
+<title>Data Center Political Risk Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: credit-desk terminal page. Header, KPI row, red-flag strip, map + state dossier, bond book, rent & capex schedule, calendar. */
+:root{
+  --bg:#F2F3F0; --panel:#FFFFFF; --ink:#1C2230; --muted:#5C6473; --line:#D5D8D2; --soft:#E8EAE5;
+  --accent:#2E4C8F;
+  /* political risk: green (supportive) -> red (hostile) */
+  --r0:#DDE0DA; --g1:#2F9A5A; --g2:#7DBA57; --g3:#D6C443; --g4:#EFA23B; --g5:#E2643A; --g6:#C8312F; --g7:#8C1B24;
+  --dem:#3F67B5; --dem2:#A9BCE3; --rep:#C2463E; --rep2:#EDB0A8;
+  --mk:#1C2230; --mkN:#7A2BB0; --halo:#FFFFFF;
+  --hi:#C8312F; --el:#E2643A; --mo:#B8961C; --lo:#2F8A52;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#6250d6; --s8:#e34948; --s9:#9AA0A8;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12161E; --panel:#1A202B; --ink:#E6E8EC; --muted:#9AA2B1; --line:#2E3644; --soft:#232A36; --accent:#8DA8E8;
+  --r0:#2A313D; --g1:#2C7D4C; --g2:#5E9443; --g3:#A49833; --g4:#B87A2C; --g5:#B9502F; --g6:#B23332; --g7:#E0545C;
+  --dem:#7E9EE0; --dem2:#34466E; --rep:#E2766D; --rep2:#6A3632;
+  --mk:#F2F3F5; --mkN:#D59BF2; --halo:#12161E;
+  --hi:#F06A66; --el:#F0915F; --mo:#E0C255; --lo:#6CC08A;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#6E7682; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#12161E; --panel:#1A202B; --ink:#E6E8EC; --muted:#9AA2B1; --line:#2E3644; --soft:#232A36; --accent:#8DA8E8;
+  --r0:#2A313D; --g1:#2C7D4C; --g2:#5E9443; --g3:#A49833; --g4:#B87A2C; --g5:#B9502F; --g6:#B23332; --g7:#E0545C;
+  --dem:#7E9EE0; --dem2:#34466E; --rep:#E2766D; --rep2:#6A3632;
+  --mk:#F2F3F5; --mkN:#D59BF2; --halo:#12161E;
+  --hi:#F06A66; --el:#F0915F; --mo:#E0C255; --lo:#6CC08A;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#6E7682; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.5}
+.wrap{max-width:1360px;margin:0 auto;padding-inline:20px;padding-block:20px 48px;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:var(--f-display);font-stretch:85%;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(24px,3.2vw,34px);font-weight:800}
+h2{font-size:20px;font-weight:700}
+h3{font-size:15px;font-weight:700}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;border-bottom:2px solid var(--ink);padding-bottom:12px}
+header.top p{margin:4px 0 0;color:var(--muted);max-width:72ch}
+.countdown{display:flex;gap:8px;align-items:baseline;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.countdown b{font-family:var(--f-display);font-stretch:80%;font-size:30px;color:var(--ink);font-weight:800}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.kpi{background:var(--panel);padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.kpi .kv{font-family:var(--f-display);font-stretch:80%;font-weight:800;font-size:26px;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);background:var(--panel)}
+.seg button{border:0;background:none;padding:6px 10px;font-size:12px;cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-mono);font-size:11.5px;border:1px solid var(--line);background:var(--panel);padding:4px 8px;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.ctl-label{font-size:12px;color:var(--muted);margin-right:4px}
+/* flags */
+.flags{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.flag{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--sevc);padding:12px 14px;display:flex;flex-direction:column;gap:6px;cursor:pointer;text-align:left}
+.flag:hover{border-color:var(--ink);border-top-color:var(--sevc)}
+.flag .who{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.flag p{margin:0;font-size:12.5px;line-height:1.45}
+.sev{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--sevc);font-weight:500}
+.sechead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.sechead p{margin:0;color:var(--muted);font-size:12.5px;max-width:80ch}
+/* map */
+.main{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:980px){.main{grid-template-columns:minmax(0,1fr)}}
+.mapbox{background:var(--panel);border:1px solid var(--line);padding:10px;position:relative;min-width:0}
+svg.map{width:100%;height:auto;display:block}
+.st{cursor:pointer;transition:opacity .15s}
+.st:hover{opacity:.82}
+.st.sel{stroke:var(--ink);stroke-width:2.2}
+.borders{fill:none;stroke:var(--panel);stroke-width:.9;pointer-events:none}
+.stlab{font-family:var(--f-mono);font-size:9px;fill:var(--ink);opacity:.7;pointer-events:none;text-anchor:middle;paint-order:stroke;stroke:var(--panel);stroke-width:2px}
+.mk{cursor:pointer}
+.mk.dim{opacity:.1;pointer-events:none}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:11.5px;color:var(--muted);padding:8px 4px 2px;align-items:center}
+.ramp{display:inline-flex}
+.ramp i{display:inline-block;width:20px;height:10px}
+.lg{display:inline-flex;gap:6px;align-items:center}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 8px;max-width:280px;line-height:1.35;z-index:5}
+.tip b{font-family:var(--f-display);font-stretch:85%;font-size:13px}
+.dossier{background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+@media (min-width:981px){.dossier{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);max-height:calc(100vh - 24px);overflow-y:auto}}
+.dossier section{padding:14px 16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.dossier section:first-child{border-top:0}
+.dhead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.score{display:flex;flex-direction:column;align-items:flex-end}
+.score .n{font-family:var(--f-display);font-stretch:80%;font-weight:800;font-size:34px;line-height:1}
+.pill{display:inline-block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:2px 6px;border:1px solid currentColor}
+.pill.solid{background:var(--hi);border-color:var(--hi);color:#fff}
+ul.tight{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.polls{width:100%;border-collapse:collapse;font-size:12px}
+.polls td,.polls th{padding:3px 4px;border-bottom:1px solid var(--soft);text-align:left}
+.polls th{font-weight:500;color:var(--muted);font-size:11px}
+.polls td.n{text-align:right;font-family:var(--f-mono)}
+.mbar{position:relative;height:14px;background:var(--soft);margin-top:4px}
+.mbar i{position:absolute;top:0;bottom:0}
+.mbar .mid{left:50%;width:1px;background:var(--ink);opacity:.5}
+.implic{background:var(--soft);padding:10px 12px;border-left:3px solid var(--accent)}
+.plist{display:flex;flex-direction:column;gap:6px}
+.prow{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:8px;align-items:start;font-size:12.5px;cursor:pointer;padding:4px;border:1px solid transparent}
+.prow:hover{border-color:var(--line)}
+.prow .sub{color:var(--muted);font-size:11.5px}
+.empty{color:var(--muted)}
+/* tables */
+.tablebox{background:var(--panel);border:1px solid var(--line);min-width:0}
+.tablehead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline;padding:14px 16px 8px}
+.tablehead p{margin:0;color:var(--muted);font-size:12.5px;max-width:80ch}
+.scroll{overflow-x:auto}
+table.book{width:100%;border-collapse:collapse;font-size:12.5px;min-width:1040px}
+table.book th{font-family:var(--f-mono);font-weight:500;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--ink);cursor:pointer;white-space:nowrap;user-select:none}
+table.book th[aria-sort]::after{content:" ▾";color:var(--ink)}
+table.book th[aria-sort="ascending"]::after{content:" ▴"}
+table.book td{padding:8px 10px;border-bottom:1px solid var(--soft);vertical-align:top}
+table.book td.n{text-align:right;font-family:var(--f-mono);white-space:nowrap}
+table.book tr:hover td{background:var(--soft)}
+.tier{font-family:var(--f-mono);font-size:11px;font-weight:500;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.tier i{width:8px;height:8px;display:inline-block}
+.bar{height:6px;background:var(--soft);margin-top:4px;width:80px}
+.bar i{display:block;height:100%}
+.vf{font-family:var(--f-mono);font-size:10.5px;white-space:nowrap}
+.vf.ok{color:var(--lo)} .vf.pr{color:var(--ink)} .vf.px{color:var(--el)}
+.est{font-family:var(--f-mono);font-size:10px;color:var(--muted);border:1px dashed var(--muted);padding:0 3px;margin-left:4px}
+.stpills{display:flex;flex-wrap:wrap;gap:4px}
+.stp{font-family:var(--f-mono);font-size:10.5px;padding:1px 4px;cursor:pointer;border:0}
+.fl{font-family:var(--f-mono);font-size:10px;color:#fff;background:var(--hi);padding:1px 4px;margin-left:4px;white-space:nowrap}
+/* schedule charts */
+.sched{background:var(--panel);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.charts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media (max-width:980px){.charts{grid-template-columns:minmax(0,1fr)}.tsum{grid-template-columns:minmax(0,1fr)}}
+.chart{position:relative;min-width:0}
+.chart svg{width:100%;height:auto;display:block}
+.chart .ax{font-family:var(--f-mono);font-size:10px;fill:var(--muted)}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .base{stroke:var(--ink);stroke-width:1}
+.chart .now{stroke:var(--ink);stroke-dasharray:3 3;stroke-width:1}
+.clegend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11.5px;color:var(--muted)}
+.clegend span{display:inline-flex;gap:5px;align-items:center}
+.clegend i{width:10px;height:10px;display:inline-block;border-radius:2px}
+.ctip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:11.5px;padding:6px 8px;min-width:170px;z-index:6;line-height:1.4}
+.ctip table{border-collapse:collapse;width:100%}
+.ctip td{padding:0 2px}
+.ctip td.n{text-align:right;font-family:var(--f-mono)}
+.tsum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.tsum div{background:var(--panel);padding:10px 12px;display:flex;flex-direction:column;gap:2px;font-size:12px}
+.tsum b{font-family:var(--f-display);font-stretch:85%;font-size:15px}
+.tsum .big{font-family:var(--f-mono);font-size:16px}
+.lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media (max-width:980px){.lower{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--panel);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cal{display:flex;flex-direction:column}
+.cal div{display:grid;grid-template-columns:86px minmax(0,1fr);gap:12px;padding:7px 0;border-top:1px solid var(--soft)}
+.cal div:first-child{border-top:0}
+.cal .d{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.cal .hot .d{color:var(--hi);font-weight:500}
+.src{font-size:12px;color:var(--muted);columns:2 280px;column-gap:24px}
+.src a{display:block;break-inside:avoid;margin-bottom:4px}
+.note{font-size:12.5px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Special situations credit · research snapshot Oct 13, 2026</div>
+      <h1>Data Center Political Risk Tracker <span class="eyebrow" style="vertical-align:middle">v1</span></h1>
+      <p>Where the desk's data center credits are building, whether each site has confirmed power, how state politics is moving, when tenants start paying rent, and which bonds sit on the wrong side of it.</p>
+    </div>
+    <div class="countdown"><b id="days">21</b><span>days to Nov 3<br>general election</span></div>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="sechead"><h2>Red flags: force majeure, bridges, contract triggers</h2><p>Click a card to open the site on the map.</p></div>
+  <div class="flags" id="flags"></div>
+
+  <div class="controls">
+    <div><span class="ctl-label">Shade states by</span>
+      <span class="seg" id="mode"><button aria-pressed="true" data-m="risk">Political risk</button><button aria-pressed="false" data-m="race">Governor race (poll avg)</button></span>
+    </div>
+    <div><span class="ctl-label">Power status</span>
+      <span class="seg" id="pw"><button aria-pressed="true" data-p="all">All</button><button aria-pressed="false" data-p="E">Energized</button><button aria-pressed="false" data-p="P">Partly energized</button><button aria-pressed="false" data-p="C">Contracted, not live</button><button aria-pressed="false" data-p="N">None contracted</button><button aria-pressed="false" data-p="U">Unconfirmed + hostile</button></span>
+    </div>
+  </div>
+  <div class="controls"><span class="ctl-label">Issuer</span><div class="chips" id="chips"></div></div>
+
+  <div class="main">
+    <div class="mapbox" id="mapbox">
+      <svg class="map" id="map" viewBox="0 0 975 610" role="img" aria-label="U.S. map of data center projects and state political risk"></svg>
+      <div class="legend" id="legend"></div>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <aside class="dossier" id="dossier"></aside>
+  </div>
+
+  <div class="tablebox">
+    <div class="tablehead">
+      <h2>Bond book: political exposure</h2>
+      <p>Project bonds are scored on their collateral sites, corporate notes and converts on the issuer's whole footprint, MW-weighted. "Verified" shows where the terms were confirmed: SEC filing, issuer release, or press only (144A-for-life and private deals never reach EDGAR).</p>
+    </div>
+    <div class="scroll"><table class="book" id="book"></table></div>
+  </div>
+
+  <div class="sched">
+    <div class="sechead">
+      <div><h2>Rent commencement and build spend</h2></div>
+      <p>Rent is what each tenant owes landlords as capacity is delivered, ramped linearly from first to full delivery. Build spend is the developer's remaining capex, spread evenly from now to full delivery. Dashed markers: estimated at $1.8M per MW-year (median of disclosed leases) or $10M per MW of capex.</p>
+    </div>
+    <div class="controls">
+      <div><span class="ctl-label">Period</span><span class="seg" id="per"><button aria-pressed="true" data-v="q">Quarterly</button><button aria-pressed="false" data-v="m">Monthly</button></span></div>
+      <div><span class="ctl-label">Jupiter force majeure</span><span class="seg" id="fm"><button aria-pressed="true" data-v="0">On schedule</button><button aria-pressed="false" data-v="1">Full 3-yr deferral</button></span></div>
+      <div><span class="ctl-label">Include estimated leases</span><span class="seg" id="estt"><button aria-pressed="true" data-v="1">Yes</button><button aria-pressed="false" data-v="0">Disclosed only</button></span></div>
+    </div>
+    <div class="charts">
+      <div class="chart" id="rentChart"><h3>Rent payable by tenant</h3><div class="note" id="rentNote"></div><svg id="rentSvg" viewBox="0 0 620 300"></svg><div class="clegend" id="rentLeg"></div><div class="ctip" id="rentTip" hidden></div></div>
+      <div class="chart" id="capChart"><h3>Build spend needed by developer</h3><div class="note" id="capNote"></div><svg id="capSvg" viewBox="0 0 620 300"></svg><div class="clegend" id="capLeg"></div><div class="ctip" id="capTip" hidden></div></div>
+    </div>
+    <div class="tsum" id="tsum"></div>
+  </div>
+
+  <div class="tablebox">
+    <div class="tablehead"><h2>Lease schedule by tenant</h2><p>Each row is one lease or phase. Sort by first rent to see what comes due when; the site score shows the political exposure of the building the rent depends on.</p></div>
+    <div class="scroll"><table class="book" id="ltab"></table></div>
+  </div>
+
+  <div class="lower">
+    <div class="card"><h2>Catalyst calendar</h2><div class="cal" id="cal"></div></div>
+    <div class="card">
+      <h2>How the scores work</h2>
+      <p class="note"><b>State risk (1 to 5)</b> is an analyst judgment from enacted policy, pending bills, local moratoriums, voter sentiment, and the likely Nov 3 winner's stated position. <b>Site score (0 to 100)</b> = state risk ÷ 5 × 100 × power factor (energized and running 0.45, partly energized 0.6, contracted but not live 0.75, none contracted 1.0). <b>Override:</b> a site with no power contracted or an undisclosed power source, in a state with heavy opposition (risk 3.5 or higher: TX, NY, MI, WI, GA, OH, NJ, NM), scores at least 80 and is always High. <b>Bond score</b> is the MW-weighted average of the sites behind it. Tiers: High 65+, Elevated 45 to 64, Moderate 30 to 44, Low under 30.</p>
+      <p class="note">Rent: disclosed contract value ÷ term where available; otherwise $1.8M per MW-year. Oracle and Meta lease values are not disclosed per site and are all estimates; Oracle's 10-Q shows $288B of leases not yet commenced (FQ2'27 to FY29, 15-19 yr terms) and CoreWeave's shows $35.5B (2026-2029). Compute contracts (IREN/Microsoft, Nebius/Microsoft) are not leases and are excluded. Coordinates are approximate. Research tool, not investment advice.</p>
+    </div>
+  </div>
+
+  <div class="card"><h2>Sources</h2><div class="src" id="src"></div></div>
+</div>
+
+<script>
+/*__DATA__*/
+(function(){
+const S=DATA.states, P=DATA.projects, B=DATA.bonds, L=DATA.leases, F=DATA.flags, CX=DATA.capex;
+const PF={E:.45,P:.6,C:.75,N:1};
+const PL={E:"Energized & running",P:"Partly energized",C:"Power contracted, not live",N:"No power contracted"};
+const byId=Object.fromEntries(P.map(p=>[p.id,p]));
+const ISS=["CRWV","ORCL","CORZ","WULF","APLD","HUT","CIFR","KEEL","CLSK","NBIS","NSCALE","IREN","RIOT","GLXY","META"];
+const ISSN={CRWV:"CoreWeave",ORCL:"Oracle",CORZ:"Core Scientific",WULF:"TeraWulf",APLD:"Applied Digital",HUT:"Hut 8",CIFR:"Cipher Digital",KEEL:"Keel Infrastructure",CLSK:"CleanSpark",NBIS:"Nebius",NSCALE:"Nscale (private)",IREN:"IREN",RIOT:"Riot Platforms",GLXY:"Galaxy (CRWV tenant)",META:"Meta SPVs"};
+const st={mode:"risk",pw:"all",iss:new Set(),sel:null,proj:null,sort:{k:"score",dir:-1},lsort:{k:"first",dir:1},per:"q",fm:false,est:true};
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt$=m=>m==null?"n/d":(Math.abs(m)>=1000?"$"+(m/1000).toFixed(Math.abs(m)>=10000?1:2).replace(/\.?0+$/,"")+"B":"$"+Math.round(m)+"M");
+const HOSTILE=3.5;
+
+P.forEach(p=>{ const r=S[p.st]?S[p.st].risk:2; p.base=Math.round(r/5*100*PF[p.power]); p.uh=(!p.pc && r>=HOSTILE); p.score=p.uh?Math.max(80,p.base):p.base; });
+B.forEach(b=>{ const ps=b.exp.map(id=>byId[id]).filter(Boolean); const mw=ps.reduce((a,p)=>a+p.mw,0)||1;
+  b.score=Math.round(ps.reduce((a,p)=>a+p.score*p.mw,0)/mw);
+  b.unpow=Math.round(ps.filter(p=>!p.pc).reduce((a,p)=>a+p.mw,0)/mw*100);
+  b.sts=[...new Set(ps.map(p=>p.st))]; b.worst=ps.slice().sort((a,c)=>c.score-a.score)[0];
+  if(!b.corp && ps.some(p=>p.uh)) b.score=Math.max(b.score,70); });
+const tier=s=>s>=65?["High","--hi"]:s>=45?["Elevated","--el"]:s>=30?["Moderate","--mo"]:["Low","--lo"];
+function raceAvg(s){const r=S[s]&&S[s].race; if(!r||!r.polls||!r.polls.length) return null;
+  const a=r.polls.reduce((x,p)=>x+p[2],0)/r.polls.length, b=r.polls.reduce((x,p)=>x+p[3],0)/r.polls.length; const dm=r.cands[0][1]==="D"?a-b:b-a; return {a,b,dm};}
+function riskColor(r){ if(r==null) return css("--r0"); return css(r>=4.5?"--g7":r>=4?"--g6":r>=3.5?"--g5":r>=3?"--g4":r>=2.5?"--g3":r>=2?"--g2":"--g1"); }
+function raceColor(s){const a=raceAvg(s); if(!a) return css("--r0"); const m=a.dm; if(Math.abs(m)<3) return css(m>=0?"--dem2":"--rep2"); return css(m>0?"--dem":"--rep");}
+const textOn=r=>(r!=null&&(r>=4||r<=1.5))?"#fff":"#1C2230";
+
+// ---------- map ----------
+const svg=document.getElementById("map"),NS="http://www.w3.org/2000/svg";
+const gS=document.createElementNS(NS,"g"),gB=document.createElementNS(NS,"path"),gL=document.createElementNS(NS,"g"),gM=document.createElementNS(NS,"g");
+svg.append(gS,gB,gL,gM); gB.setAttribute("class","borders"); gB.setAttribute("d",DATA.borderD);
+const stEls={};
+DATA.shapes.forEach(s=>{const e=document.createElementNS(NS,"path"); e.setAttribute("d",s.d); e.setAttribute("class","st"); e.setAttribute("tabindex",S[s.st]?"0":"-1"); e.setAttribute("aria-label",s.name);
+  e.addEventListener("click",()=>selectState(s.st)); e.addEventListener("keydown",ev=>{if(ev.key==="Enter")selectState(s.st)});
+  e.addEventListener("mousemove",ev=>tipState(ev,s)); e.addEventListener("mouseleave",hideTip); gS.append(e); stEls[s.st]=e;
+  if(S[s.st]&&!["NJ","RI","CT","DE","MD","MA","VT","NH","DC"].includes(s.st)){const t=document.createElementNS(NS,"text"); t.setAttribute("x",s.c[0]); t.setAttribute("y",s.c[1]+3); t.setAttribute("class","stlab"); t.textContent=s.st; gL.append(t);} });
+function markerSvg(p,r){const mk=css("--mk"),h=css("--halo"),n=css("--mkN");
+  if(p.uh){const k=r*1.3; return `<path d="M0 ${-k}L${k} 0L0 ${k}L${-k} 0Z" fill="${n}" stroke="${h}" stroke-width="1.6"/><path d="M0 ${-k*.45}V${k*.1}M0 ${k*.3}v.1" stroke="${h}" stroke-width="1.8" stroke-linecap="round"/>`;}
+  if(p.power==="E") return `<circle r="${r}" fill="${mk}" stroke="${h}" stroke-width="1.6"/>`;
+  if(p.power==="P") return `<circle r="${r}" fill="${h}" stroke="${mk}" stroke-width="2"/><path d="M0 ${-r}A${r} ${r} 0 0 0 0 ${r}Z" fill="${mk}"/>`;
+  if(p.power==="C"&&p.pc) return `<circle r="${r}" fill="${h}" stroke="${mk}" stroke-width="2.4"/><circle r="${Math.max(1.6,r*.32)}" fill="${mk}"/>`;
+  const k=r*1.25; return `<path d="M0 ${-k}L${k} 0L0 ${k}L${-k} 0Z" fill="${h}" fill-opacity=".9" stroke="${n}" stroke-width="2.4" stroke-dasharray="3 2"/>`;}
+let mkEls={};
+function drawMarkers(){gM.innerHTML=""; mkEls={}; P.slice().sort((a,b)=>b.mw-a.mw).forEach(p=>{const g=document.createElementNS(NS,"g"); g.setAttribute("class","mk"); g.setAttribute("tabindex","0");
+  g.setAttribute("transform",`translate(${p.x},${p.y})`); g.setAttribute("aria-label",`${p.name}, ${ISSN[p.owner]}, ${PL[p.power]}`);
+  const r=Math.max(4.5,Math.min(13,Math.sqrt(p.mw)/2.6)); g.innerHTML=markerSvg(p,r);
+  g.addEventListener("click",ev=>{ev.stopPropagation(); selectProject(p.id)}); g.addEventListener("keydown",ev=>{if(ev.key==="Enter")selectProject(p.id)});
+  g.addEventListener("mousemove",ev=>tipProj(ev,p)); g.addEventListener("mouseleave",hideTip); mkEls[p.id]=g; gM.append(g);}); applyFilters();}
+function ownerMatch(p){return !st.iss.size||st.iss.has(p.owner)||(st.iss.has("CRWV")&&/CoreWeave/.test(p.tenant));}
+function visible(p){const okp= st.pw==="all"||(st.pw==="U"?p.uh:p.power===st.pw); return okp&&ownerMatch(p);}
+function applyFilters(){P.forEach(p=>mkEls[p.id]&&mkEls[p.id].classList.toggle("dim",!visible(p))); renderBook(); renderKpis(); renderSched(); renderLeases();}
+function shade(){DATA.shapes.forEach(s=>{const e=stEls[s.st]; e.setAttribute("fill",st.mode==="risk"?(S[s.st]?riskColor(S[s.st].risk):css("--r0")):raceColor(s.st)); e.classList.toggle("sel",st.sel===s.st);}); renderLegend();}
+function renderLegend(){const Lg=document.getElementById("legend"), mk=css("--mk"), n=css("--mkN"), h=css("--panel");
+  const shapes=`<span class="lg"><svg width="14" height="14" viewBox="-7 -7 14 14"><circle r="5" fill="${mk}"/></svg>Energized & running</span>
+  <span class="lg"><svg width="14" height="14" viewBox="-7 -7 14 14"><circle r="5" fill="${h}" stroke="${mk}" stroke-width="2"/><path d="M0 -5A5 5 0 0 0 0 5Z" fill="${mk}"/></svg>Partly energized</span><span class="lg"><svg width="14" height="14" viewBox="-7 -7 14 14"><circle r="5" fill="${h}" stroke="${mk}" stroke-width="2"/><circle r="1.8" fill="${mk}"/></svg>Contracted, not live</span>
+  <span class="lg"><svg width="16" height="16" viewBox="-8 -8 16 16"><path d="M0 -6L6 0L0 6L-6 0Z" fill="none" stroke="${n}" stroke-width="2" stroke-dasharray="3 2"/></svg>No power contracted / source unconfirmed</span>
+  <span class="lg"><svg width="16" height="16" viewBox="-8 -8 16 16"><path d="M0 -7L7 0L0 7L-7 0Z" fill="${n}"/><path d="M0 -3V0.5M0 2.5v.1" stroke="${h}" stroke-width="1.8" stroke-linecap="round"/></svg>Unconfirmed power in hostile state</span><span class="lg">Size = MW</span>`;
+  const ramp=st.mode==="risk"?`<span class="lg">Supportive <span class="ramp">${["--g1","--g2","--g3","--g4","--g5","--g6","--g7"].map(v=>`<i style="background:${css(v)}"></i>`).join("")}</span> Hostile</span>`
+   :`<span class="lg"><span class="ramp"><i style="background:${css('--rep')}"></i><i style="background:${css('--rep2')}"></i><i style="background:${css('--dem2')}"></i><i style="background:${css('--dem')}"></i></span> R lead → D lead (pale = within 3 pts; grey = no race or polls)</span>`;
+  Lg.innerHTML=ramp+shapes;}
+const tip=document.getElementById("tip"),box=document.getElementById("mapbox");
+function placeTip(ev,html){tip.innerHTML=html; tip.hidden=false; const r=box.getBoundingClientRect(); let x=ev.clientX-r.left+14,y=ev.clientY-r.top+14; if(x+280>r.width)x=ev.clientX-r.left-290; tip.style.left=Math.max(4,x)+"px"; tip.style.top=y+"px";}
+function hideTip(){tip.hidden=true;}
+function tipState(ev,s){const d=S[s.st]; if(!d){placeTip(ev,`<b>${esc(s.name)}</b><br>No tracked desk exposure`);return;} const a=raceAvg(s.st);
+  placeTip(ev,`<b>${esc(d.name)}</b> · risk ${d.risk.toFixed(1)}/5<br>${esc(d.stance)}${a?`<br>${esc(d.race.cands[0][0])} ${a.a.toFixed(1)} / ${esc(d.race.cands[1][0])} ${a.b.toFixed(1)}`:d.race?"":"<br>No 2026 governor race"}`);}
+function tipProj(ev,p){const ls=L.filter(l=>l.site===p.id); placeTip(ev,`<b>${esc(p.name)}</b> · ${esc(ISSN[p.owner])}<br>${p.st} · ${p.mw.toLocaleString()} MW · ${PL[p.power]}${p.pc?"":" · power source unconfirmed"}<br>Tenant: ${esc(p.tenant)}${ls.length?`<br>First rent: ${ls.map(l=>l.first).sort()[0]}`:""}<br>Site score ${p.score}${p.uh?" · HIGH (unconfirmed power, hostile state)":""}`);}
+
+function selectState(s){st.sel=s; st.proj=null; shade(); renderDossier();}
+function selectProject(id){const p=byId[id]; st.sel=p.st; st.proj=id; shade(); renderDossier();}
+function stancePill(d){const c=d.risk>=4?"--hi":d.risk>=3?"--el":d.risk>=2.5?"--mo":"--lo"; return `<span class="pill" style="color:var(${c})">${esc(d.stance)}</span>`;}
+function prow(p){const mk=css("--mk"),n=css("--mkN");
+  const ic=p.uh?`<path d="M0 -6L6 0L0 6L-6 0Z" fill="${n}"/>`:p.power==="E"?`<circle r="5" fill="${mk}"/>`:p.power==="P"?`<circle r="5" fill="none" stroke="${mk}" stroke-width="2"/><path d="M0 -5A5 5 0 0 0 0 5Z" fill="${mk}"/>`:(p.power==="C"&&p.pc)?`<circle r="5" fill="none" stroke="${mk}" stroke-width="2"/><circle r="1.8" fill="${mk}"/>`:`<path d="M0 -6L6 0L0 6L-6 0Z" fill="none" stroke="${n}" stroke-width="2"/>`;
+  return `<div class="prow" data-id="${p.id}" tabindex="0"><svg width="14" height="14" viewBox="-7 -7 14 14" aria-hidden="true">${ic}</svg>
+  <div><b>${esc(p.name)}</b> <span class="sub">· ${esc(ISSN[p.owner])} · ${p.st} · ${p.mw.toLocaleString()} MW</span><div class="sub">${esc(p.tenant)}</div></div><span class="mono" style="color:var(${tier(p.score)[1]})">${p.score}</span></div>`;}
+function bindProws(el){el.querySelectorAll(".prow").forEach(r=>{r.onclick=()=>selectProject(r.dataset.id); r.onkeydown=e=>{if(e.key==="Enter")selectProject(r.dataset.id)};});}
+function renderDossier(){const el=document.getElementById("dossier"),s=st.sel;
+  if(!s){el.innerHTML=overview(); bindProws(el); return;}
+  const d=S[s]; const projs=P.filter(p=>p.st===s).sort((a,b)=>b.score-a.score); let h="";
+  if(st.proj){const p=byId[st.proj]; const bs=B.filter(b=>b.exp.includes(p.id)); const ls=L.filter(l=>l.site===p.id); const fl=F.filter(f=>f.site===p.id);
+    h+=`<section><div class="eyebrow">Site</div><div class="dhead"><div><h2>${esc(p.name)}</h2><div class="note">${esc(ISSN[p.owner])} · developer ${esc(p.dev)} · ${p.st} · ${p.mw.toLocaleString()} MW</div></div><div class="score"><span class="n" style="color:var(${tier(p.score)[1]})">${p.score}</span><span class="eyebrow">site score</span></div></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="pill" style="color:var(--ink)">${PL[p.power]}</span><span class="pill" style="color:var(${p.pc?"--lo":"--el"})">${p.pc?"Power source confirmed":"Power source unconfirmed"}</span>${p.uh?`<span class="pill solid">High: unconfirmed power, hostile state</span>`:""}</div>
+    <div><b>Tenant:</b> ${esc(p.tenant)}</div><div class="note">${esc(p.note)}</div>${p.pv?`<div class="note"><b>Power check (Oct 13):</b> ${esc(p.pv)}</div>`:""}
+    ${fl.map(f=>`<div class="implic" style="border-left-color:var(--hi)"><b>${esc(f.title)}</b><br>${esc(f.body)}</div>`).join("")}
+    ${ls.length?`<div><div class="eyebrow">Rent schedule</div><ul class="tight">${ls.map(l=>`<li>${esc(l.tenant)}: ${l.mw} MW, first rent <b>${l.first}</b>, full ${l.full}, ~${fmt$(l.ann)}/yr${l.est?' <span class="est">est.</span>':''}</li>`).join("")}</ul></div>`:""}
+    ${bs.length?`<div><div class="eyebrow">Debt exposed to this site</div><ul class="tight">${bs.map(b=>`<li>${esc(b.iss)} ${esc(b.inst)} <span class="mono">${fmt$(b.size)}</span>${b.corp?' <span class="note">(corporate)</span>':''}</li>`).join("")}</ul></div>`:""}</section>`;}
+  if(!d){h+=`<section><h2>${esc(DATA.shapes.find(x=>x.st===s).name)}</h2><p class="empty">No tracked desk exposure in this state.</p><button class="chip" id="back">Back to overview</button></section>`; el.innerHTML=h; el.querySelector("#back").onclick=back; return;}
+  h+=`<section><div class="eyebrow">State dossier</div><div class="dhead"><div><h2>${esc(d.name)}</h2><div style="margin-top:4px">${stancePill(d)}</div></div><div class="score"><span class="n" style="color:${riskColor(d.risk)}">${d.risk.toFixed(1)}</span><span class="eyebrow">risk / 5</span></div></div></section>`;
+  if(d.race){const a=raceAvg(s),r=d.race; h+=`<section><h3>${esc(r.office)} · ${esc(r.rating)}</h3>`;
+    if(a){const lead=a.a>=a.b?r.cands[0]:r.cands[1],m=Math.abs(a.a-a.b),c0=r.cands[0][1]==="D"?"--dem":"--rep",c1=r.cands[1][1]==="D"?"--dem":"--rep",w0=a.a/(a.a+a.b)*100;
+      h+=`<div class="note">Poll average: <b>${esc(lead[0])} (${lead[1]}) +${m.toFixed(1)}</b> across ${r.polls.length} poll${r.polls.length>1?"s":""}</div>
+      <div class="mbar"><i style="left:0;width:${w0}%;background:var(${c0})"></i><i style="left:${w0}%;right:0;background:var(${c1})"></i><i class="mid"></i></div>
+      <table class="polls"><tr><th>Pollster</th><th>Date</th><th style="text-align:right">${esc(r.cands[0][0].split(" ").pop())} (${r.cands[0][1]})</th><th style="text-align:right">${esc(r.cands[1][0].split(" ").pop())} (${r.cands[1][1]})</th></tr>${r.polls.map(p=>`<tr><td>${esc(p[0])}</td><td>${esc(p[1])}</td><td class="n">${p[2]}</td><td class="n">${p[3]}</td></tr>`).join("")}</table>`;}
+    else h+=`<div class="note">${esc(r.cands[0][0])} (${r.cands[0][1]}) vs ${esc(r.cands[1][0])} (${r.cands[1][1]}). No recent public polling found.</div>`;
+    if(r.positions&&r.positions.length) h+=`<ul class="tight">${r.positions.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    if(d.extra) h+=`<div class="note">${esc(d.extra)}</div>`; h+=`</section>`;}
+  else h+=`<section><h3>2026 ballot</h3><div class="note">No governor race in 2026. Policy direction is set by the sitting administration and legislature.</div></section>`;
+  h+=`<section><h3>What it means for the credits</h3><div class="implic">${esc(d.implication)}</div></section><section><h3>Policy and local actions</h3><ul class="tight">${d.policy.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`;
+  const debt=B.filter(b=>!b.corp&&b.exp.some(id=>byId[id].st===s));
+  h+=`<section><h3>Sites here (${projs.length})</h3><div class="plist">${projs.map(prow).join("")}</div>${debt.length?`<div class="eyebrow" style="margin-top:6px">Project debt secured here</div><ul class="tight">${debt.map(b=>`<li>${esc(b.iss)} ${esc(b.inst)} <span class="mono">${fmt$(b.size)}</span></li>`).join("")}</ul>`:""}<button class="chip" id="back" style="align-self:flex-start">Back to overview</button></section>`;
+  el.innerHTML=h; bindProws(el); el.querySelector("#back").onclick=back;}
+function back(){st.sel=null; st.proj=null; shade(); renderDossier();}
+function overview(){const uh=P.filter(p=>p.uh).sort((a,b)=>b.mw-a.mw), un=P.filter(p=>!p.pc&&!p.uh).sort((a,b)=>b.score-a.score);
+  return `<section><div class="eyebrow">Overview</div><h2>Unconfirmed power in hostile states</h2><p class="note" style="margin:0">Sites without a confirmed power source in states rated 3.5 or higher. All are scored High. Click a state or marker for its dossier.</p></section>
+  <section><div class="plist">${uh.map(prow).join("")}</div></section>
+  <section><h3>Unconfirmed power, friendlier states</h3><div class="plist">${un.map(prow).join("")}</div></section>`;}
+
+// ---------- KPIs ----------
+function bVisible(b){if(st.iss.size&&!st.iss.has(b.iss)) return false; if(st.pw==="U") return b.exp.some(id=>byId[id].uh); if(st.pw!=="all"&&!b.exp.some(id=>byId[id].power===st.pw)) return false; return true;}
+function renderKpis(){const bs=B.filter(bVisible), tot=bs.reduce((a,b)=>a+(b.size||0),0), hi=bs.filter(b=>b.score>=65).reduce((a,b)=>a+(b.size||0),0);
+  const ps=P.filter(visible), mw=ps.reduce((a,p)=>a+p.mw,0), uhmw=ps.filter(p=>p.uh).reduce((a,p)=>a+p.mw,0);
+  const ls=leasesInView(); const r27=ls.filter(l=>qi(l.first)<=qi("2027Q4")&&qi(l.first)>=qi("2026Q4")).reduce((a,l)=>a+l.ann,0);
+  document.getElementById("kpis").innerHTML=[[fmt$(tot),`Tracked debt in view (${bs.length} instruments)`],[fmt$(hi),"Rated High political exposure"],[(mw/1000).toFixed(1)+" GW",`Site capacity in view (${ps.length} sites)`],[(uhmw/1000).toFixed(1)+" GW","Unconfirmed power in hostile states"],[fmt$(r27)+"/yr","New annual rent due to start Q4'26 to Q4'27"]].map(k=>`<div class="kpi"><span class="kv mono">${k[0]}</span><span class="l">${k[1]}</span></div>`).join("");}
+
+// ---------- flags ----------
+const SEV={crit:["Critical","--hi"],high:["High","--el"],med:["Watch","--mo"]};
+document.getElementById("flags").innerHTML=F.map((f,i)=>`<button class="flag" data-i="${i}" style="--sevc:var(${SEV[f.sev][1]})"><span class="sev">${SEV[f.sev][0]} · ${esc(f.date)}</span><h3>${esc(f.title)}</h3><span class="who">${esc(f.who)}</span><p>${esc(f.body)}</p></button>`).join("");
+document.getElementById("flags").onclick=e=>{const b=e.target.closest(".flag"); if(!b) return; selectProject(F[+b.dataset.i].site); document.getElementById("mapbox").scrollIntoView({behavior:"smooth",block:"start"});};
+
+// ---------- bond book ----------
+const COLS=[["iss","Issuer"],["inst","Instrument"],["size","Size"],["kind","Type"],["ver","Verified"],["sts","States"],["unpow","Unconfirmed MW"],["score","Political score"],["worst","Highest-risk site"]];
+function verCls(v){return /^SEC/.test(v)?"ok":/Issuer/.test(v)?"pr":"px";}
+function renderBook(){const t=document.getElementById("book"),{k,dir}=st.sort;
+  const rows=B.filter(bVisible).sort((a,b)=>{let x=a[k],y=b[k]; if(k==="sts"){x=x.join();y=y.join()} if(k==="worst"){x=a.worst?a.worst.score:0;y=b.worst?b.worst.score:0} if(x==null)return 1; if(y==null)return -1; return (x>y?1:x<y?-1:0)*dir;});
+  t.innerHTML=`<thead><tr>${COLS.map(c=>`<th data-k="${c[0]}" ${c[0]===k?`aria-sort="${dir>0?"ascending":"descending"}"`:""} style="${["size","unpow"].includes(c[0])?"text-align:right":""}">${c[1]}</th>`).join("")}</tr></thead><tbody>${rows.map(b=>{const [tn,tc]=tier(b.score);
+    return `<tr><td class="mono">${esc(b.iss)}</td><td>${esc(b.inst)}${b.flag?`<span class="fl">${b.flag==="FM"?"FORCE MAJEURE":"BRIDGE"}</span>`:""}${b.d?`<div class="note">${esc(b.d)}</div>`:""}</td><td class="n">${fmt$(b.size)}</td><td>${esc(b.kind)}</td>
+    <td><span class="vf ${verCls(b.ver)}">${esc(b.ver)}</span></td>
+    <td><div class="stpills">${b.sts.map(s=>`<button class="stp" data-st="${s}" style="background:${riskColor(S[s]?S[s].risk:null)};color:${textOn(S[s]?S[s].risk:null)}">${s}</button>`).join("")}</div></td>
+    <td class="n">${b.unpow}%</td><td><span class="tier" style="color:var(${tc})"><i style="background:var(${tc})"></i>${tn} · ${b.score}</span><div class="bar"><i style="width:${b.score}%;background:var(${tc})"></i></div></td>
+    <td>${b.worst?`<b>${esc(b.worst.name)}</b> <span class="note">${b.worst.st} · ${PL[b.worst.power]}${b.worst.pc?"":", unconfirmed"}</span>`:""}</td></tr>`;}).join("")}</tbody>`;
+  t.querySelectorAll("th").forEach(th=>th.onclick=()=>{const kk=th.dataset.k; st.sort={k:kk,dir:st.sort.k===kk?-st.sort.dir:(["iss","inst","kind","sts","ver"].includes(kk)?1:-1)}; renderBook();});
+  t.querySelectorAll(".stp").forEach(b=>b.onclick=()=>{selectState(b.dataset.st); document.getElementById("mapbox").scrollIntoView({behavior:"smooth",block:"start"});});}
+
+// ---------- schedule ----------
+function qi(q){return (+q.slice(0,4))*4+(+q.slice(5))-1;}
+function qs(i){return Math.floor(i/4)+"Q"+(i%4+1);}
+const Q0=qi("2025Q4"), Q1=qi("2029Q4"), NOWQ=qi("2026Q4");
+const TG=[["Oracle",/Oracle/],["CoreWeave",/CoreWeave/],["Meta",/^Meta/],["Anthropic",/^Anthropic/],["Fluidstack (Google-backed)",/Fluidstack/],["AMD & AMD-backed",/AMD/],["Unnamed IG hyperscalers",/IG|AA-|hyperscaler/i],["AWS",/AWS/],["Other",/.*/]];
+function tgroup(t){for(const [n,re] of TG) if(re.test(t)) return n; return "Other";}
+const DG=[["Oracle landlords (Vantage, Crusoe, Related, STACK)",p=>p.owner==="ORCL"],["Meta JVs",p=>p.owner==="META"],["Applied Digital",p=>p.owner==="APLD"],["Hut 8",p=>p.owner==="HUT"],["Core Scientific",p=>p.owner==="CORZ"],["TeraWulf",p=>p.owner==="WULF"],["Cipher Digital",p=>p.owner==="CIFR"],["Galaxy",p=>p.owner==="GLXY"],["Other (Riot, CleanSpark, CRWV landlords)",p=>true]];
+function dgroup(p){for(const [n,f] of DG) if(f(p)) return n;}
+const SER=["--s1","--s2","--s3","--s4","--s5","--s6","--s7","--s8","--s9"];
+function leasesInView(){return L.filter(l=>(st.est||!l.est)&&ownerMatch(byId[l.site])&&(st.pw==="all"||(st.pw==="U"?byId[l.site].uh:byId[l.site].power===st.pw))).map(l=>{
+  if(st.fm&&l.fm) return {...l,first:qs(qi(l.first)+12),full:qs(qi(l.full)+12)}; return l;});}
+function runrate(l,q){const a=qi(l.first),b=qi(l.full); if(q<a) return 0; if(q>=b) return l.ann; return l.ann*(q-a+1)/(b-a+1);}
+function capexSeries(){const out={}; const done=new Set();
+  leasesInView().forEach(l=>{const p=byId[l.site], c=CX[l.site]||{}; const g=dgroup(p);
+    if(c.remaining){ if(done.has(l.site)) return; done.add(l.site); const end=Math.max(NOWQ,qi(c.by)); const n=end-NOWQ+1; for(let q=NOWQ;q<=end;q++){(out[g]=out[g]||{})[q]=((out[g]||{})[q]||0)+c.remaining/n;} return; }
+    const per=c.perMW||10; const a=qi(l.first),b=qi(l.full); let und=l.mw; if(b<NOWQ) und=0; else if(a<NOWQ) und=l.mw*(b-NOWQ+1)/(b-a+1);
+    if(und<=0) return; const end=Math.max(NOWQ,b), n=end-NOWQ+1; for(let q=NOWQ;q<=end;q++){(out[g]=out[g]||{})[q]=((out[g]||{})[q]||0)+und*per/n;} });
+  return out;}
+function stacked(svgId,tipId,legId,series,names,unit,noteId,note){
+  const el=document.getElementById(svgId), W=620,H=300,ml=54,mr=8,mt=10,mb=28; const div=st.per==="m"?3:1;
+  const qs_=[]; for(let q=Q0;q<=Q1;q++) qs_.push(q);
+  const cols=st.per==="m"?qs_.flatMap(q=>[0,1,2].map(m=>({q,m}))):qs_.map(q=>({q,m:null}));
+  const totals=cols.map(c=>names.reduce((a,n)=>a+((series[n]||{})[c.q]||0)/div,0)); const mx=Math.max(1,...totals);
+  const step=niceStep(mx/4); const top=Math.ceil(mx/step)*step; const y=v=>mt+(H-mt-mb)*(1-v/top); const bw=(W-ml-mr)/cols.length;
+  let g=""; for(let v=0;v<=top+1e-9;v+=step){g+=`<line class="grid" x1="${ml}" x2="${W-mr}" y1="${y(v)}" y2="${y(v)}"/><text class="ax" x="${ml-6}" y="${y(v)+3}" text-anchor="end">${fmt$(v)}</text>`;}
+  cols.forEach((c,i)=>{let acc=0; const x=ml+i*bw+ (bw>6?1:0), w=Math.max(1,bw-(bw>6?2:0.5));
+    names.forEach((n,si)=>{const v=((series[n]||{})[c.q]||0)/div; if(v<=0) return; const y0=y(acc),y1=y(acc+v); acc+=v; g+=`<rect x="${x}" y="${y1+ (acc>v?1:0)}" width="${w}" height="${Math.max(0.5,y0-y1-(acc>v?1:0))}" fill="var(${SER[si]})"/>`;});
+    if(c.m===null||c.m===1){ if((c.q%4===0)) g+=`<text class="ax" x="${ml+i*bw+bw/2}" y="${H-10}" text-anchor="middle">${qs(c.q).slice(0,4)}</text>`;}
+    g+=`<rect x="${ml+i*bw}" y="${mt}" width="${bw}" height="${H-mt-mb}" fill="transparent" data-i="${i}"/>`;});
+  const nx=ml+cols.findIndex(c=>c.q===NOWQ)*bw; g+=`<line class="now" x1="${nx}" x2="${nx}" y1="${mt}" y2="${H-mb}"/><text class="ax" x="${nx+3}" y="${mt+9}">now</text>`;
+  g+=`<line class="base" x1="${ml}" x2="${W-mr}" y1="${y(0)}" y2="${y(0)}"/>`; el.innerHTML=g;
+  document.getElementById(legId).innerHTML=names.map((n,si)=>`<span><i style="background:var(${SER[si]})"></i>${esc(n)}</span>`).join("");
+  document.getElementById(noteId).textContent=note;
+  const tipEl=document.getElementById(tipId), wrap=el.parentElement;
+  el.onmousemove=e=>{const r=e.target.closest("rect[data-i]"); if(!r){tipEl.hidden=true;return;} const c=cols[+r.dataset.i];
+    const rows=names.map((n,si)=>[n,((series[n]||{})[c.q]||0)/div,si]).filter(x=>x[1]>0.5).reverse();
+    const lab=st.per==="m"?`${qs(c.q)} · month ${c.m+1}`:qs(c.q);
+    tipEl.innerHTML=`<b>${lab}</b><table>${rows.map(x=>`<tr><td><i style="display:inline-block;width:8px;height:8px;background:var(${SER[x[2]]})"></i> ${esc(x[0])}</td><td class="n">${fmt$(x[1])}</td></tr>`).join("")}<tr><td><b>Total ${unit}</b></td><td class="n"><b>${fmt$(totals[+r.dataset.i])}</b></td></tr></table>`;
+    tipEl.hidden=false; const wr=wrap.getBoundingClientRect(); let x=e.clientX-wr.left+12; if(x+220>wr.width) x=e.clientX-wr.left-232; tipEl.style.left=Math.max(0,x)+"px"; tipEl.style.top=(e.clientY-wr.top+12)+"px";};
+  el.onmouseleave=()=>tipEl.hidden=true;}
+function niceStep(x){const p=Math.pow(10,Math.floor(Math.log10(x||1))); const m=x/p; return (m<=1?1:m<=2?2:m<=2.5?2.5:m<=5?5:10)*p;}
+function renderSched(){const ls=leasesInView(); const rent={};
+  ls.forEach(l=>{const g=tgroup(l.tenant); for(let q=Q0;q<=Q1;q++){const v=runrate(l,q)/4; if(v) (rent[g]=rent[g]||{})[q]=((rent[g]||{})[q]||0)+v;}});
+  const tn=TG.map(t=>t[0]); const per=st.per==="m"?"per month":"per quarter";
+  stacked("rentSvg","rentTip","rentLeg",rent,tn,per,"rentNote",`Rent ${per}, all tracked leases in view. ${st.fm?"Jupiter shifted +3 years.":""}`);
+  const cx=capexSeries(); const dn=DG.map(d=>d[0]);
+  stacked("capSvg","capTip","capLeg",cx,dn,per,"capNote",`Remaining build capex ${per} from Q4 2026, leased projects only.`);
+  // tenant summary
+  const sum={}; ls.forEach(l=>{const g=tgroup(l.tenant),p=byId[l.site]; const s=sum[g]=sum[g]||{ann:0,mw:0,first:"9999Q9",last:"0000Q0",hi:0,est:false};
+    s.ann+=l.ann; s.mw+=l.mw; if(l.first<s.first)s.first=l.first; if(l.full>s.last)s.last=l.full; if(p.score>=65) s.hi+=l.ann; if(l.est) s.est=true;});
+  const fut={}; ls.forEach(l=>{if(qi(l.first)>=NOWQ){const g=tgroup(l.tenant); fut[g]=(fut[g]||0)+l.ann;}});
+  document.getElementById("tsum").innerHTML=tn.filter(n=>sum[n]).map((n,i)=>{const s=sum[n]; return `<div><span style="display:flex;gap:6px;align-items:center"><i style="width:10px;height:10px;background:var(${SER[tn.indexOf(n)]});display:inline-block;border-radius:2px"></i><b>${esc(n)}</b></span>
+    <span class="big">${fmt$(s.ann)}/yr</span><span class="note">at full run-rate · ${(s.mw/1000).toFixed(2)} GW${s.est?" · incl. est.":""}</span>
+    <span>Not yet paying: <b class="mono">${fmt$(fut[n]||0)}/yr</b></span><span>Rent window: ${s.first} to ${s.last}</span><span style="color:var(${s.hi>0?"--hi":"--muted"})">In High-risk sites: ${fmt$(s.hi)}/yr (${Math.round(s.hi/s.ann*100)}%)</span></div>`;}).join("");}
+const LC=[["tenant","Tenant"],["site","Site"],["dev","Developer"],["st","State"],["mw","MW"],["first","First rent"],["full","Full rent"],["ann","Annual rent"],["value","Contract value"],["term","Term"],["power","Power"],["score","Site score"]];
+function renderLeases(){const t=document.getElementById("ltab"); const {k,dir}=st.lsort;
+  const rows=leasesInView().map(l=>{const p=byId[l.site]; return {...l,p,site:p.name,dev:p.dev,st:p.st,power:(p.pc?"":"~")+PL[p.power],score:p.score,tg:tgroup(l.tenant)};})
+   .sort((a,b)=>{let x=a[k],y=b[k]; if(x==null) return 1; if(y==null) return -1; return (x>y?1:x<y?-1:0)*dir;});
+  t.innerHTML=`<thead><tr>${LC.map(c=>`<th data-k="${c[0]}" ${c[0]===k?`aria-sort="${dir>0?"ascending":"descending"}"`:""} style="${["mw","ann","value","term"].includes(c[0])?"text-align:right":""}">${c[1]}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>{const [tn,tc]=tier(r.score);
+   return `<tr><td>${esc(r.tenant)}<div class="note">${esc(r.tg)}</div></td><td><b>${esc(r.site)}</b>${r.fm?`<span class="fl">FM${st.fm?" +3y":""}</span>`:""}<div class="note">${esc(r.src)}</div></td><td>${esc(r.dev)}</td>
+   <td><button class="stp" data-st="${r.st}" style="background:${riskColor(S[r.st]?S[r.st].risk:null)};color:${textOn(S[r.st]?S[r.st].risk:null)}">${r.st}</button></td><td class="n">${r.mw}</td><td class="mono">${r.first}</td><td class="mono">${r.full}</td>
+   <td class="n">${fmt$(r.ann)}${r.est?'<span class="est">est.</span>':""}</td><td class="n">${r.value?fmt$(r.value):"n/d"}</td><td class="n">${r.term} yr</td><td>${esc(r.p.pc?PL[r.p.power]:PL[r.p.power]+", source unconfirmed")}</td>
+   <td><span class="tier" style="color:var(${tc})"><i style="background:var(${tc})"></i>${tn} · ${r.score}</span></td></tr>`;}).join("")}</tbody>`;
+  t.querySelectorAll("th").forEach(th=>th.onclick=()=>{const kk=th.dataset.k; st.lsort={k:kk,dir:st.lsort.k===kk?-st.lsort.dir:(["mw","ann","value","score"].includes(kk)?-1:1)}; renderLeases();});
+  t.querySelectorAll(".stp").forEach(b=>b.onclick=()=>{selectState(b.dataset.st); document.getElementById("mapbox").scrollIntoView({behavior:"smooth",block:"start"});});}
+
+// ---------- controls ----------
+const chips=document.getElementById("chips");
+chips.innerHTML=`<button class="chip" data-i="__all" aria-pressed="true">All</button>`+ISS.map(i=>`<button class="chip" data-i="${i}" aria-pressed="false" title="${esc(ISSN[i])}">${i}</button>`).join("");
+chips.onclick=e=>{const b=e.target.closest(".chip"); if(!b) return; const i=b.dataset.i; if(i==="__all") st.iss.clear(); else st.iss.has(i)?st.iss.delete(i):st.iss.add(i);
+  chips.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.i==="__all"?String(!st.iss.size):String(st.iss.has(c.dataset.i)))); applyFilters();};
+function seg(id,fn){const el=document.getElementById(id); el.onclick=e=>{const b=e.target.closest("button"); if(!b) return; el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); fn(b);};}
+seg("mode",b=>{st.mode=b.dataset.m; shade();}); seg("pw",b=>{st.pw=b.dataset.p; applyFilters();});
+seg("per",b=>{st.per=b.dataset.v; renderSched();}); seg("fm",b=>{st.fm=b.dataset.v==="1"; renderSched(); renderLeases(); renderKpis();}); seg("estt",b=>{st.est=b.dataset.v==="1"; renderSched(); renderLeases(); renderKpis();});
+svg.addEventListener("click",e=>{if(e.target===svg) back();});
+
+const CAL=[["Oct 13","CIFR launches $850M 0% 2032 converts to fund Barber Lake equity."],["Oct 19","TX: TCEQ reports compliance with the data center permit pause."],["Nov 3","Election day: governors in TX, GA, MI, WI, OH, PA, NY, NM, OK, AL, IL, AZ; Georgia PSC (2 of 5 seats); 21 Ohio local data center measures.",1],["Nov 9","TX: bill pre-filing opens; BofA expects 60+ data center bills."],["Nov 23","NM: deadline for the Jupiter fuel-cell air permit decision (proceedings paused by NM Supreme Court).",1],["Dec 10","TX: ERCOT Batch Zero audit report due; TCEQ pause expected to lift ~mid-Dec with new conditions.",1],["Dec 31","RIOT: $573M Morgan Stanley bridge matures. OKC moratorium expires.",1],["Q1 2027","Feb 1: Green Chile pipeline in-service target (Jupiter). ~Mar: WULF Hawesville $500M bridge matures. Beacon Point energization.",1],["Jan 2027","New governors seated; sessions open in TX, MI, WI, GA, NM."],["2027","Rent starts: Galaxy Helios Ph. II, Pecos, River Bend, Beacon Point Ph. 1, PF3, Delta Forge 1, Hawesville, Rockdale."],["~Jul 2027","NY: EO 62 one-year permit pause lapses unless extended."],["2028","Jupiter target. With a full FM deferral, Oracle's full rent could slip to 2031."]];
+document.getElementById("cal").innerHTML=CAL.map(c=>`<div class="${c[2]?"hot":""}"><span class="d">${c[0]}</span><span>${esc(c[1])}</span></div>`).join("");
+const SRC=/*__SRC__*/[];
+document.getElementById("src").innerHTML=SRC.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${esc(s[0])}</a>`).join("");
+const days=Math.max(0,Math.ceil((new Date("2026-11-03T12:00:00-05:00")-new Date())/864e5)); document.getElementById("days").textContent=days;
+function all(){drawMarkers(); shade(); renderDossier();}
+all();
+const mq=matchMedia("(prefers-color-scheme: dark)"); mq.addEventListener&&mq.addEventListener("change",all);
+new MutationObserver(all).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+})();
+</script>
